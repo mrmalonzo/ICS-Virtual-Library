@@ -1,0 +1,54 @@
+.Page-header {
+
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: lightgrey;
+    align-items: center;
+
+    margin-bottom: -20px;
+
+}
+
+.ICS-logo {
+    
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.Text-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    
+}
+
+.Website-name {
+    
+    font-family: "PT Serif", Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+
+}
+
+.Website-subtext {
+    margin-top: 2px;
+    font-family: "Helvetica", sans-serif;
+    font-weight: normal;
+
+}
+
+
+.Right-elements {
+    display: flex;
+    gap: 10px;
+    margin-right: 100px;
+    font-family: "Helvetica", sans-serif;
+
+    
+}

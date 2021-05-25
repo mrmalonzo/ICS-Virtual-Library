@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+  }
+  
+.navbar-item {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    color: inherit;
+    text-decoration: inherit;
+    outline: none;
+    font-family: 'Gotham';
+    
+    width: 100px;
+    height: 100px;
+}
+
+.navbar-item:hover {
+    color: blue;
+}
