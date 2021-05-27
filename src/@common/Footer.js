@@ -20,11 +20,13 @@ const Footer = () =>{
 					</h3>
 				</div>
 			</div>
+
 			<div className="group2">
 				<h3 className="ics-details">
 				The Institute of Computer Science (ICS) is an autonomous institute of the College of Arts and Sciences (CAS) of the University of the Philippines 
 				Los Baños (UPLB). ICS is Commission on Higher Education's (CHED) Center of Excellence in Information Technology Education. 
 				</h3>
+				
 				<div className="final">
 
 					<h3>

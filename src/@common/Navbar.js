@@ -11,7 +11,8 @@ function Navbar() {
     const handleLogin = async function(googleData) {
         const user = await login(googleData.tokenId);
         console.log(user);
-        alert("login");
+        console.log(user.data.name);
+        alert("Logged In as "+user.data.name);
     }
 
     return (
@@ -23,7 +24,7 @@ function Navbar() {
             <GoogleLogin
                 clientId= "798519625092-1nv3qjq5saevoafui6o510fhhk2f3n7k.apps.googleusercontent.com"
 
-                render={renderProps=>(
+                render = {renderProps=>(
                     <a className="navbar-item" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                         Login
                     </a>

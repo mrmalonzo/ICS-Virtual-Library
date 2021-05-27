@@ -1,7 +1,21 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../assets/fonts/Gotham.otf") format("opentype");
+}
+
+
 .navbar {
     display: flex;
     flex-direction: row;
     margin-right: 20px;
+
+    
+    
   }
   
 .navbar-item {  

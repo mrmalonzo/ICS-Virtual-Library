@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+@font-face {
+	font-family: "PT Serif";
+	src: url("../assets/fonts/PTSerif-Regular.ttf");
+}
+
 @font-face {
     font-family: "Gotham";
     src: url("../assets/fonts/Gotham.otf") format("opentype");

@@ -1,9 +1,26 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+	font-family: "PT Serif Bold";
+	src: url("../assets/fonts/PTSerif-Bold.ttf");
+}
 .header {
     margin-top: 20px;
     display: flex;
     flex: 1;
     justify-content: space-between;
     flex-direction: row;
+
+    margin-bottom: -20px;
+
+    border-style: none none solid none;
+    border-bottom-width: 1px;
+    border-bottom-color: gray;
+    
+    
 }
 
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './pages/Landing.js';
+import App from './app/App';
+
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-
-  
-  <Landing/>,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
 
   document.getElementById('root'),
   
