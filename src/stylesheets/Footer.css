@@ -15,6 +15,7 @@
 	color:#FFFFFF;
 	display: flex;
 	white-space: pre;
+	flex:1;
 	justify-content: space-between;
 	height: 300px;
 	font-family: Gotham;
