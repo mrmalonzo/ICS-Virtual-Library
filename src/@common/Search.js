@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import hero from '../assets/images/hero_image.png';
+import hero from '../assets/images/hero/hero_image_3.png';
 import 'antd/dist/antd.css';
 import '../stylesheets/Search.css';
 

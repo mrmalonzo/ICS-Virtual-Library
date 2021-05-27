@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from '../@common/Header.js';
-import Search from '../@common/Search.js';
-import Footer from '../@common/Footer.js';
+import Header from '../@common/Header';
+import Search from '../@common/Search';
+import Footer from '../@common/Footer';
+import Announcements from '../@common/Announcements';
 
 const Landing = () => {
 
@@ -11,8 +12,9 @@ const Landing = () => {
 
         <div>
 
-            <Header/>,
-            <Search/>,
+            <Header/>
+            <Search/>
+            <Announcements/>
             <Footer/>
 
 

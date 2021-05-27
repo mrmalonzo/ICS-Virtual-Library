@@ -11,8 +11,8 @@ const NotFound404 = () => {
 
         <div>
 
-            <Header/>,
-            <NotFound/>,
+            <Header/>
+            <NotFound/>
             <Footer/>
 
 
