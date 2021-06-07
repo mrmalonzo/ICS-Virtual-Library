@@ -1,0 +1,7 @@
+export {default as AboutPage} from './AboutPage'
+export {default as AdminPage} from './AdminPage'
+export {default as BrowsePage} from './BrowsePage'
+export {default as ForbiddenPage} from './ForbiddenPage'
+export {default as LandingPage} from './LandingPage'
+export {default as NotFoundPage} from './NotFoundPage'
+export {default as ProfilePage} from './ProfilePage'

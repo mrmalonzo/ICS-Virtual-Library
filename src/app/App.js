@@ -1,16 +1,17 @@
 import React, { Component, Fragment} from 'react';
 import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 
-import { Navbar, Footer } from '@common'
+import { Navbar, Footer } from '@common';
 
-import LandingPage from '../pages/LandingPage';
-import ProfilePage from '../pages/ProfilePage';
-import BrowsePage from '../pages/BrowsePage';
-import NotFoundPage from '../pages/NotFoundPage';
-import ForbiddenPage from '../pages/ForbiddenPage';
-import AdminPage from '../pages/AdminPage';
-import AboutPage from '../pages/AboutPage';
-
+import {
+    LandingPage,
+    ProfilePage,
+    BrowsePage,
+    NotFoundPage,
+    ForbiddenPage,
+    AdminPage,
+    AboutPage
+} from '../pages/'
 
 
 export default class App extends Component {
