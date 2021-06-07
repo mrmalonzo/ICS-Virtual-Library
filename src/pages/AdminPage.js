@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Sidebar, Table, Footer, Details} from '../@common/';
+import { Sidebar, Table, Footer, Details} from '@common';
 
 
 const AdminPage = () => {

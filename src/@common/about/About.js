@@ -1,13 +1,16 @@
 import React from 'react';
 
-import hero from '../../assets/images/hero/hero_about_3.png';
-import david from '../../assets/images/id/david.jpg';
-import bea from '../../assets/images/id/bea.jpg';
-import sam from '../../assets/images/id/sam.jpg';
-import kirby from '../../assets/images/id/kirby.jpg';
-import red from '../../assets/images/id/red.jpg';
-import daniel from '../../assets/images/id/daniel.jpg';
-import marlon from '../../assets/images/id/marlon.jpg';
+import { 
+    AboutBanner, 
+    David,
+    Bea,
+    Sam,
+    Kirby,
+    Red,
+    Daniel,
+    Marlon
+
+} from '../../assets/images';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -38,7 +41,7 @@ const About = () => {
     return(
         
         <div>
-            <img className="Hero-image-about" src={hero} alt ="Hero Image"/>
+            <img className="Hero-image-about" src={AboutBanner} alt ="Hero Image"/>
 
             
             <h1 className="Meet-devs">Meet The Students Behind ICS Virtual Library</h1>
@@ -50,7 +53,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={kirby}
+                    image={Kirby}
                     title="Kirby Leopardas"
                     />
                     <CardContent>
@@ -74,7 +77,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={david}
+                    image={David}
                     title="Steven Crespo"
                     />
                     <CardContent>
@@ -98,7 +101,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={sam}
+                    image={Sam}
                     title="Sam Lagrosas"
                     />
                     <CardContent>
@@ -122,7 +125,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={bea}
+                    image={Bea}
                     title="Angela Javier"
                     />
                     <CardContent>
@@ -153,7 +156,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={daniel}
+                    image={Daniel}
                     title="Daniel Aguilar"
                     />
                     <CardContent>
@@ -177,7 +180,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={marlon}
+                    image={Marlon}
                     title="Marlon Malonzo"
                     />
                     <CardContent>
@@ -201,7 +204,7 @@ const About = () => {
                     <CardMedia
                     style={{height:250}}
                     className={classes.media}
-                    image={red}
+                    image={Red}
                     title="Red Munoz"
                     />
                     <CardContent>

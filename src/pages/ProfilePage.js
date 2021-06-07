@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { Sidebar, Details } from '../@common';
+import { Sidebar, Details } from '@common';
 
 import "../stylesheets/pages/ProfilePage.css";
 

@@ -8,7 +8,7 @@ import { login } from '../../api/auth';
 import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
 
-import logo from "../../assets/images/logos/icslogo.jpg";
+import { Logo } from '../../assets/images';
 
 
 
@@ -30,7 +30,7 @@ export default class Navbar extends Component {
             <section className="header">
                 <section className="logo">
                     <Link to = "/">
-                        <img src={logo} alt="ICS logo" width="110px" height="105px"/> 
+                        <img src={Logo} alt="ICS logo" width="110px" height="105px"/> 
                     </Link>
                     
                     <section className="title">

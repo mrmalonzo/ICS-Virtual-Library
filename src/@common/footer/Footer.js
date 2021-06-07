@@ -1,9 +1,12 @@
 import React from "react";
 import "../../stylesheets/components/Footer.css";
 
-import firefox from "../../assets/icons/firefox.png";
-import facebook from "../../assets/icons/facebook.png";
-import twitter from "../../assets/icons/twitter.png";
+import {
+	Facebook,
+	Firefox,
+	Twitter
+} from '../../assets/images/'
+
 
 const Footer = () =>{
 	return(
@@ -34,9 +37,9 @@ const Footer = () =>{
 					©2021 ICS Virtual Library, All Rights Reserved.
 					</h3>
 					<div className="links">
-						<a href="www.google.com" target="_blank" rel="noopener noreferrer"><img src={firefox} alt="Firefox" className="imagesLinks"/></a>
-						<a href="www.twitter.com" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="Firefox" className="imagesLinks"/></a>
-						<a href="www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Firefox" className="imagesLinks"/></a>
+						<a href="www.google.com" target="_blank" rel="noopener noreferrer"><img src={Firefox} alt="Firefox" className="imagesLinks"/></a>
+						<a href="www.twitter.com" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt="Firefox" className="imagesLinks"/></a>
+						<a href="www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Firefox" className="imagesLinks"/></a>
 					</div>
 
 				</div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import '../../stylesheets/components/Announcements.css';
 
-import books from "../../assets/images/misc/books.png";
-import people from "../../assets/images/misc/people-reading.png";
-import uplb from "../../assets/images/misc/uplb.png";
+import {
+    Books,
+    People,
+    UPLB
+} from '../../assets/images';
 
 const Announcements = () => {
 
@@ -12,7 +14,7 @@ const Announcements = () => {
         <div className="Container">
 
             <div className="Announcement-1">
-                <img className="Announcement-image" src = {books} alt="Books"/>
+                <img className="Announcement-image" src = {Books} alt="Books"/>
                 <h1 className="Image-title">Discover Books</h1>
 
                 <div className="Announcement-button">
@@ -22,7 +24,7 @@ const Announcements = () => {
             </div>
 
             <div className="Announcement-2">
-                <img className="Announcement-image" src = {people} alt="People"/> 
+                <img className="Announcement-image" src = {People} alt="People"/> 
 
                 <h1 className="Image-title">Learn More</h1>
                 <h4 className="Image-subtitle">Lorem isum dolor sit amet, consectetur <br/>adipiscing elit, sed do eiusmod </h4>
@@ -33,7 +35,7 @@ const Announcements = () => {
             </div>
 
             <div className="Announcement-3">
-                <img className="Announcement-image" src = {uplb} alt="UPLB"/>
+                <img className="Announcement-image" src = {UPLB} alt="UPLB"/>
                 <h1 className="Image-title">Unlock Features</h1>
 
                 <div className="Announcement-button">

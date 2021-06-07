@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { NotFound } from '../@common/';
+import { NotFound } from '@common';
 
 
 const NotFoundPage = () => {

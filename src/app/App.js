@@ -1,7 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 
-import { Navbar, Footer } from '../@common/'
+import { Navbar, Footer } from '@common'
 
 import LandingPage from '../pages/LandingPage';
 import ProfilePage from '../pages/ProfilePage';
