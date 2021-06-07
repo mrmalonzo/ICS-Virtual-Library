@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+.filter{
+	color:#000000;
+	/*border:1px solid black;*/
+	width: 15%;
+	font-family: Gotham;
+	font-size: 20px;
+	margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+.filter h4 {
+    font-size: 16px;
+}
+
+.checkbox-1{
+	/*border: 1px solid green;*/
+	margin-bottom: 10px;
+}
+
+.checkbox-1 h4, .sort-date h4{
+	font-weight: bold;
+	border-bottom: 2px solid black;
+}
+
+.filter-title{
+	font-size: 24px;
+	
+	font-family: 'PT Serif', serif;
+}
+
+.checkbox{
+	margin: 5px 20px;
+	text-transform: capitalize;
+
+}
+
+input[type=checkbox]{
+	transform: scale(1);
+	margin-right: 10px;
+}
+
+.sort-date{
+	margin-bottom: 20px;
+}
+
+.sort-date label{
+	margin-left:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=date]{
+    transform: scale(0.7);
+	
+	text-align: center;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 5px;
+}

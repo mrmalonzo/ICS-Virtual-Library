@@ -5,6 +5,7 @@ import { Navbar, Footer } from '../@common/'
 
 import LandingPage from '../pages/LandingPage';
 import ProfilePage from '../pages/ProfilePage';
+import BrowsePage from '../pages/BrowsePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import ForbiddenPage from '../pages/ForbiddenPage';
 import AdminPage from '../pages/AdminPage';
@@ -47,15 +48,17 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/"> <LandingPage/> </Route> 
                     <Route exact path="/about"> <AboutPage/> </Route> 
+                    <Route exact path="/browse"> <BrowsePage/> </Route>
                     
                     
                     { this.state.user && (    
-                            <Fragment>
+                            <Switch>
                                 <Route exact path="/account/profile/"> <ProfilePage/> </Route>
                                 <Route exact path="/account/assign"> <AdminPage/> </Route>
 
                                 <Redirect exact from="/account" to="/account/profile"/>
-                            </Fragment>                            
+                                <Route> <NotFoundPage/> </Route>
+                            </Switch>                            
                             
                             
                     )}

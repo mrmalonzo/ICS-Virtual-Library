@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import { Sidebar, Details } from '../@common';
 
-import "../stylesheets/pages/Profile.css";
+import "../stylesheets/pages/ProfilePage.css";
 
 export default class ProfilePage extends Component {
     render() {

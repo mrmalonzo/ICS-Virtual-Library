@@ -1,0 +1,18 @@
+
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+.numresults {
+    font-family: "PT Serif";
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}

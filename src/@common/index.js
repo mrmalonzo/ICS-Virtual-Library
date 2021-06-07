@@ -9,3 +9,5 @@ export { default as Search } from './search/Search';
 export { default as Sidebar } from './sidebar/Sidebar';
 export { default as Table } from './table/Table';
 export { default as Forbidden } from './forbidden/Forbidden';
+export { default as Results } from './browse/Results';
+export { default as Filter } from './browse/Filter';
