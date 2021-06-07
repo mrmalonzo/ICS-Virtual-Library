@@ -1,53 +1,76 @@
-import React, {Component} from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component, Fragment} from 'react';
+import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 
-import Landing from '../pages/Landing';
-import Home from '../pages/Home';
-import Profile from '../pages/Profile';
-import NotFound404 from '../pages/NotFound404';
-import AssignRole from '../pages/AssignRole';
+import { Navbar, Footer } from '../@common/'
+
+import LandingPage from '../pages/LandingPage';
+import ProfilePage from '../pages/ProfilePage';
+import NotFoundPage from '../pages/NotFoundPage';
+import ForbiddenPage from '../pages/ForbiddenPage';
+import AdminPage from '../pages/AdminPage';
+import AboutPage from '../pages/AboutPage';
+
 
 
 export default class App extends Component {
 
-    state = {
-        
-        user: {}
+    state = {   
+        user: null
+    }
+
+    componentDidMount() {
+        const data = JSON.parse(localStorage.getItem("user"))
+        this.setState({
+            user: data
+        });
     }
 
     storeData = data => {
         this.setState({
             user: data
         });
+
+        localStorage.setItem('user', JSON.stringify(data))
+        console.log(data)
     }
+
 
     render() {
 
+
         return (
 
-
-            <Switch>
-
-                <Route exact path={"/"}
-                render = { props =>(
-                    <Landing { ... props} storeData={this.storeData}  />
-                )}/> 
+            <Fragment>
+                <Navbar data={ this.state.user } storeData={ this.storeData }/>
                 
-                <Route exact path={"/home"}
-                    render = { props =>(
-                        <Home { ... props} data={this.state.user.first_name} storeData={this.storeData} />
-                )}/> 
+                    
+                <Switch>
+                    <Route exact path="/"> <LandingPage/> </Route> 
+                    <Route exact path="/about"> <AboutPage/> </Route> 
+                    
+                    
+                    { this.state.user && (    
+                            <Fragment>
+                                <Route exact path="/account/profile/"> <ProfilePage/> </Route>
+                                <Route exact path="/account/assign"> <AdminPage/> </Route>
 
-                <Route exact path="/home/account/profile"> <Profile data={this.state.user.first_name}/> </Route>
-                <Route exact path="/home/account/assign"><AssignRole/></Route>
+                                <Redirect exact from="/account" to="/account/profile"/>
+                            </Fragment>                            
+                            
+                            
+                    )}
 
+                    <Route exact path="/account/profile/"> <ForbiddenPage/> </Route>
+                    <Route exact path="/account/assign"> <ForbiddenPage/> </Route>
 
-                <Route> <NotFound404/> </Route>
+                    <Route> <NotFoundPage/> </Route>
+
+                </Switch> 
+
                 
-            
-            </Switch>
-        
-
+                
+                <Footer/>
+            </Fragment>
 
         );
     }

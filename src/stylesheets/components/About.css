@@ -1,0 +1,57 @@
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("../../assets/fonts/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: "Gotham Medium";
+    src: url("../../assets/fonts/GothamMedium_1.ttf");
+}
+
+
+.Hero-image-about {
+
+    width: 100.5%;
+    height: 500px;
+    object-fit: cover;
+    
+    
+    margin-left: -8px;
+    margin-right:-10px;
+    align-self: center;
+}
+
+.Meet-devs {
+    margin-top: 50px;
+    font-family: "Gotham Medium";
+    text-align: center;
+}
+
+.Student-profiles-four {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.Student-profiles-three {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 50px;
+}
+
+.Name {
+    font-family: "Gotham Bold";
+    
+}

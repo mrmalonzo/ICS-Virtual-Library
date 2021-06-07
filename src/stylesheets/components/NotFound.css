@@ -1,0 +1,43 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+	font-family: "PT Serif Bold";
+	src: url("../../assets/fonts/PTSerif-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+.Home-link {
+    color: #1A1A19;
+}
+
+
+.NotFound {
+    
+    
+    margin-left: 50px;    
+    margin-right: 100px;    
+    margin-top: 40px;    
+    margin-bottom: 400px;
+    
+}
+ 
+
+.NotFound h1 {
+    font-family: "PT Serif Bold", serif;
+    
+}
+
+.NotFound h2 {
+    font-family: "PT Serif";
+}
+
+.NotFound h3 {
+    font-family: "Gotham";
+}

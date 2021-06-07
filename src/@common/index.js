@@ -1,0 +1,11 @@
+export { default as About } from './about/About'
+export { default as Announcements } from './announcements/Announcements';
+export { default as Details } from './details/Details';
+export { default as Footer } from './footer/Footer';
+export { default as Header } from './header/Header';
+export { default as Navbar } from './navbar/Navbar';
+export { default as NotFound } from './notfound/NotFound';
+export { default as Search } from './search/Search';
+export { default as Sidebar } from './sidebar/Sidebar';
+export { default as Table } from './table/Table';
+export { default as Forbidden } from './forbidden/Forbidden';

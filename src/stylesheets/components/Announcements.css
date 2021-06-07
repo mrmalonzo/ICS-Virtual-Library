@@ -1,0 +1,104 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("../../assets/fonts/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: "Gotham Medium";
+    src: url("../../assets/fonts/GothamMedium_1.ttf");
+}
+
+
+
+.Container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+}
+
+.Announcement-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    
+}
+
+.Announcement-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+}
+
+
+.Announcement-button:hover  {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0340AD;
+    color: #0340AD;
+}
+
+.Announcement-button:hover h3 {
+    color: #0340AD;
+    transition: 0.3s;
+}
+
+.Announcement-button {
+    background-color: #0340AD;
+
+    width: 150px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+    padding-top: 5px;
+
+    transition: 0.3s;
+
+}
+
+.Image-title {
+    margin-top: 10px;
+    font-family: "Gotham Medium";
+    margin-bottom: -2px;
+    
+}
+
+.Image-subtitle {
+    font-family: "Gotham";
+    
+}
+
+
+.Announcement-button h3 {
+    color: white;
+    font-family: "Gotham";
+
+}
+
+.Announcement-image {
+    width: 300px;
+    height: 200px;
+    
+}

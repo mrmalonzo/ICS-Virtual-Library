@@ -1,6 +1,6 @@
 import { api } from '../utils/api';
 
-export const login = (token) => api.post('/api/login', {token});
+export const login = (token) => api.post('/users/login', {token});
 
 
 

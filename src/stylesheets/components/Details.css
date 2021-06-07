@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("../../assets/fonts/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: "Gotham Medium";
+    src: url("../../assets/fonts/GothamMedium_1.ttf");
+}
+
+.Profile h2 {
+
+    font-family: "PT Serif";
+    
+}
+
+.Profile {
+    
+    
+
+
+}
