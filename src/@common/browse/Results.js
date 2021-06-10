@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Books from './Books';
 import axios from 'axios';
 import { Pagination, Input } from 'antd';
@@ -19,48 +19,53 @@ function itemRender(current, type, originalElement) {
 }
 
 
-const Results = () => {
-  const [datas, setDatas] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(10);
+class Results extends Component {
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/comments');
-      setDatas(res.data);
-      setLoading(false);
-    };
+  state = {
+    loading: false
+  }
 
-    fetchPosts();
-  }, []);
+  componentDidMount() {
+    console.log(this.props.data)
 
 
-  // Get current datas
-  const indexOfLastData = currentPage * dataPerPage;
-  const indexOfFirstData = indexOfLastData - dataPerPage;
-  const currentData = datas.slice(indexOfFirstData, indexOfLastData);
+  }
 
-  // Change page
-  const onChange = pageNumber => setCurrentPage(pageNumber);
+  
+  render () {
+      return (
+        <div className='container mt-5'>
+          <Search
+            placeholder="Search ICS Virtual Library"
+            style = {{ marginBottom: 20 }}
+            enterButton="Search"
+            size="large"
+            onSearch={value => console.log(value)}
+          />
 
-  return (
-    <div className='container'>
-      <Search
-        placeholder="Search ICS Virtual Library"
-        style = {{ marginBottom: 20 }}
-        enterButton="Search"
-        size="large"
-        onSearch={value => console.log(value)}
-      />
-      <div className="numresults">
-        {datas.length} Results
-      </div>
-      <Books datas={currentData} loading={loading} />
-      <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={datas.length} itemRender={itemRender} onChange={onChange} defaultPageSize={dataPerPage} showSizeChanger={false}/>
-    </div>
-  );
+          <div className="numresults">
+
+            { this.props.data.length != null ? (
+              <div>
+              <h4> {this.props.data.length} Results </h4>
+              <Books datas={this.props.data} loading={this.state.loading} />
+              </div>
+            ) : (
+              <h4> What Will You Search For Today? </h4>
+            )
+
+            }
+            
+          </div>
+
+          
+
+        </div>
+      );
+
+
+  }
+  
 };
 
 export default Results;

@@ -1,7 +1,19 @@
-import React, { Component, Fragment} from 'react';
-import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
+import React, { 
+    Component, 
+    Fragment
+} from 'react';
 
-import { Navbar, Footer } from '@common';
+import { 
+    Redirect, 
+    Route, 
+    BrowserRouter, 
+    Switch 
+} from 'react-router-dom';
+
+import { 
+    Navbar, 
+    Footer 
+} from '@common';
 
 import {
     LandingPage,
@@ -18,7 +30,8 @@ import {
 export default class App extends Component {
 
     state = {   
-        user: null
+        user: null,
+        toSearch: null
     }
 
     componentDidMount() {
@@ -36,6 +49,13 @@ export default class App extends Component {
         localStorage.setItem('user', JSON.stringify(data))
     }
 
+    displayData = data => {
+        console.log(data);
+        this.setState({
+            toSearch: data
+        });
+    }
+
 
     render() {
 
@@ -47,9 +67,9 @@ export default class App extends Component {
                 
                     
                 <Switch>
-                    <Route exact path="/"> <LandingPage/> </Route> 
+                    <Route exact path="/"> <LandingPage display = {this.displayData} /> </Route> 
                     <Route exact path="/about"> <AboutPage/> </Route> 
-                    <Route exact path="/browse"> <BrowsePage/> </Route>
+                    <Route exact path="/browse/"> <BrowsePage data={this.state.toSearch} /> </Route>
                     
                     
                     { this.state.user && (    

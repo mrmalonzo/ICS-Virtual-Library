@@ -11,11 +11,11 @@ const Books = ({ datas, loading }) => {
       {datas.map(data => (
         <li key={data.id} className='list-group-item'>
             <div className="book-title">
-                {data.name}
+                {data.title}
             </div>
 
             <div className="author">
-                Author: {data.email}
+                Author: {data.authors}
             </div><br/><br/>
 
             <div className="date">

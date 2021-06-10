@@ -42,18 +42,18 @@ export default class Filter extends Component {
 
 
   	render(){
-  		console.log("Journals: " + this.state.journals);
-  		console.log("Books: " + this.state.books);
-  		console.log("SP: " + this.state.specialproblems);
-  		console.log("Thesis: " + this.state.thesis);
+  		// console.log("Journals: " + this.state.journals);
+  		// console.log("Books: " + this.state.books);
+  		// console.log("SP: " + this.state.specialproblems);
+  		// console.log("Thesis: " + this.state.thesis);
 
-  		console.log("Start Date: " + this.state.start);
-  		console.log("End Date: " + this.state.end);
+  		// console.log("Start Date: " + this.state.start);
+  		// console.log("End Date: " + this.state.end);
 
-  		console.log("Database: " + this.state.database);
-  		console.log("UI/UX Design: " + this.state.ui);
-  		console.log("Image Processing: " + this.state.imgprocess);
-  		console.log("Parallel Programming: " + this.state.parallel);
+  		// console.log("Database: " + this.state.database);
+  		// console.log("UI/UX Design: " + this.state.ui);
+  		// console.log("Image Processing: " + this.state.imgprocess);
+  		// console.log("Parallel Programming: " + this.state.parallel);
 
   		return(
   			<div className="filter">

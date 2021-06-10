@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import GoogleLogin from 'react-google-login';
 import { Link } from 'react-router-dom';
 
-import { login } from '../../api/auth';
+import { login, updateRole } from '../../api/';
 
 import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
@@ -18,11 +18,11 @@ export default class Navbar extends Component {
         
         const user = await login(googleData.tokenId);
         const auth = JSON.parse(user.config.data);
-        
         user.data.token = auth.token;
         this.props.storeData(user.data);
         
     }
+
 
     render() {
 
