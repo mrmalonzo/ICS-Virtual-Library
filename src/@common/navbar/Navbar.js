@@ -14,11 +14,12 @@ import { Logo } from '../../assets/images';
 
 export default class Navbar extends Component {
 
-
     handleLogin = async (googleData) => {
         
         const user = await login(googleData.tokenId);
-        console.log(user.data);
+        const auth = JSON.parse(user.config.data);
+        
+        user.data.token = auth.token;
         this.props.storeData(user.data);
         
     }

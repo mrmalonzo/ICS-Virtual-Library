@@ -11,7 +11,7 @@ export default class LandingPage extends Component {
         return (
 
             <div>     
-                <Search/>
+                <Search store={results}/>
                 <Announcements/>
                 
             </div>

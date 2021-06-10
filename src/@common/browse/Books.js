@@ -10,7 +10,7 @@ const Books = ({ datas, loading }) => {
     <ul className='list-group mb-4'>
       {datas.map(data => (
         <li key={data.id} className='list-group-item'>
-            <div className="title">
+            <div className="book-title">
                 {data.name}
             </div>
 

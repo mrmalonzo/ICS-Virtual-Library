@@ -11,6 +11,7 @@ import {
     ForbiddenPage,
     AdminPage,
     AboutPage
+
 } from '../pages/'
 
 
@@ -33,7 +34,6 @@ export default class App extends Component {
         });
 
         localStorage.setItem('user', JSON.stringify(data))
-        console.log(data)
     }
 
 
