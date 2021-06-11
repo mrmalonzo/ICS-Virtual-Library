@@ -39,6 +39,7 @@ export default class App extends Component {
         this.setState({
             user: data
         });
+
     }
 
     storeData = data => {

@@ -10,28 +10,51 @@
 
 .list-group-item {
     margin-right: 2%;
+    margin-bottom: 10px;
 }
 
 .book-title {
     font-family: 'PT Serif Bold';
-    font-size: 40px;
+    font-size: 32px;
+    margin-bottom: -5px;
     width: 100%;
     height: 50%;
 }
 
 .author {
     font-family: 'PT Serif';
+    font-size: 18px;
     margin-left: 2%;
+    display: inline-block;
+    
 }
+
+.author-name {
+    margin-right: 5px;
+    display: inline-block;
+    text-decoration: underline;
+
+}
+
+
+.source-code {
+    font-family: 'PT Serif';
+    font-size: 18px;
+    margin-left: 2%;
+    color:gray;  
+}
+
 
 
 .date {
     font-family: 'PT Serif';
+    font-size: 18px;
     margin-left: 2%;
 }
 
 
 .description {
     font-family: 'PT Serif';
+    font-size: 18px;
     margin-left: 2%;
 }

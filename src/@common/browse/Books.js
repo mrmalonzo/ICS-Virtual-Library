@@ -10,21 +10,49 @@ const Books = ({ datas, loading }) => {
     <ul className='list-group mb-4'>
       {datas.map(data => (
         <li key={data.id} className='list-group-item'>
-            <div className="book-title">
+            <h1 className="book-title">
                 {data.title}
-            </div>
+            </h1>
 
             <div className="author">
-                Author: {data.authors}
-            </div><br/><br/>
+              by {data.authors.map((authors) => 
+                
+                  <div className="author-name">
+                    {authors} 
+                  </div>
+              
+              )}
+            </div>
 
             <div className="date">
-                Date Published: {data.id}
-            </div><br/><br/>
-
-            <div className="description">
-                Description: {data.body}
+                Date Published: {data.date_of_publication}
             </div>
+
+            {/* <div className="description">
+                Description: {data.body}
+            </div> */}
+
+            <div className="links">
+              { data.sourcecode && (
+                <a href={data.sourcecode} className="source-code">
+                  Source Code
+                </a>
+              )}
+
+              { data.manuscript && (
+                <a href={data.manuscript} className="source-code">
+                  Manuscript
+                </a>
+              )}
+
+              { data.abstract && (
+                <a href={data.abstract} className="source-code">
+                  Abstract
+                </a>
+              )}
+
+            </div>
+            
         </li>
       ))}
     </ul>

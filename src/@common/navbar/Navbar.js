@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import GoogleLogin from 'react-google-login';
 import { Link } from 'react-router-dom';
 
-import { login, updateRole } from '../../api/';
+import { getSummaryReport, login, updateRole, viewAllUsers } from '../../api/';
 
 import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
@@ -23,6 +23,9 @@ export default class Navbar extends Component {
         
     }
 
+    changeUser = () => {
+        getSummaryReport();
+    }
 
     render() {
 
@@ -43,6 +46,7 @@ export default class Navbar extends Component {
 
                 <section className="navbar">
                     <a href="/browse" className="navbar-item">Browse</a>
+                    {/* <button onClick={this.changeUser}>Hello</button> */}
                     <a href="/about" className="navbar-item">About</a>
 
                     
