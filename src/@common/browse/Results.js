@@ -1,12 +1,19 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Books from './Books';
-import axios from 'axios';
-import { Pagination, Input } from 'antd';
+import { withRouter } from "react-router";
+
+import { search } from '../../api';
+
+import { Pagination, Input, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+
 import '../../stylesheets/components/Results.css';
 
 
 
 const { Search } = Input;
+const antIcon = <LoadingOutlined style={{ fontSize: 36 }} spin />;
+
 
 function itemRender(current, type, originalElement) {
   if (type === 'prev') {
@@ -22,40 +29,79 @@ function itemRender(current, type, originalElement) {
 class Results extends Component {
 
   state = {
-    loading: false
+    data: null,
+    loading: true,
+    toSearch: null
   }
 
-  componentDidMount() {
-    console.log(this.props.data)
+  onSearch = async (value) => {
 
+    this.setState({
+      loading: true
+    })
+    
+
+    try {
+      const results = await search(value);
+      console.log(results);
+      
+      this.setState({
+        data: results.data
+      });
+    
+
+    } catch(e) {
+      console.log("Error")
+      this.setState({
+        data: []
+      });
+
+    }
+
+    this.setState({
+      toSearch: value,
+      loading: false
+    })
+
+    this.props.history.push(`/browse?query=${value}`);  
+}
+
+  componentDidMount() {
+    this.onSearch(this.props.data);
 
   }
 
   
   render () {
       return (
-        <div className='container mt-5'>
+        <div className='container'>
+          
           <Search
             placeholder="Search ICS Virtual Library"
             style = {{ marginBottom: 20 }}
             enterButton="Search"
             size="large"
-            onSearch={value => console.log(value)}
+            onSearch={this.onSearch}
           />
-
+          
           <div className="numresults">
 
-            { this.props.data.length != null ? (
-              <div>
-              <h4> {this.props.data.length} Results </h4>
-              <Books datas={this.props.data} loading={this.state.loading} />
+            { this.state.loading && (
+              <div className="loader">
+              <Spin indicator={antIcon} size="default" />
               </div>
-            ) : (
-              <h4> What Will You Search For Today? </h4>
-            )
+            )}
 
-            }
-            
+
+            { (this.state.data != null && this.state.loading == false) && (
+                    
+              <div>
+                <h4> Showing {this.state.data.length} Results for "{this.state.toSearch}" </h4>
+                <Books datas={this.state.data} />
+              </div>
+            )}
+
+       
           </div>
 
           
@@ -68,4 +114,4 @@ class Results extends Component {
   
 };
 
-export default Results;
+export default withRouter(Results);

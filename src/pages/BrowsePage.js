@@ -8,8 +8,7 @@ import '../stylesheets/pages/BrowsePage.css'
 class BrowsePage extends Component {
     
     componentDidMount() {
-        console.log(this.props.data);
-        console.log(this.props.hello);
+    
 
     }
 

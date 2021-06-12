@@ -6,7 +6,7 @@ import { Search, Announcements } from '@common';
 export default class LandingPage extends Component {
 
     showResults = (data) => {
-        this.props.display(data);
+        this.props.passToBrowse(data);
     }
 
 
@@ -16,7 +16,7 @@ export default class LandingPage extends Component {
         return (
 
             <div>     
-                <Search store={this.showResults}/>
+                <Search passToBrowse={this.showResults}/>
                 <Announcements/>
                 
             </div>

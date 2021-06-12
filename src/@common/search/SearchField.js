@@ -15,10 +15,10 @@ const { Search } = Input
 class SearchField extends Component  {
 
     
-    onSearch = async (value) => {
-        const results = await search(value);
+    onSearch = (value) => {
         
-        this.props.store(results.data);
+        
+        this.props.passToBrowse(value);
         this.props.history.push(`/browse?query=${value}`);
         
     }

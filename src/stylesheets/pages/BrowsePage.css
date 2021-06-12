@@ -1,5 +1,6 @@
 
 .Search-results {
     display: flex;
-    flex-direction: ˆrow;
+    flex-direction: row;
+    margin-bottom: 50px;
 }

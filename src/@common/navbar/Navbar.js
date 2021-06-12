@@ -1,14 +1,33 @@
 
 import React, {Component} from 'react';
 import GoogleLogin from 'react-google-login';
+import { Menu, Dropdown, Button} from 'antd';
 import { Link } from 'react-router-dom';
-
-import { getSummaryReport, login, updateRole, viewAllUsers } from '../../api/';
+import { login } from '../../api/';
+import { Logo } from '../../assets/images';
+import { DownOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
 
 import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
 
-import { Logo } from '../../assets/images';
+
+const menu = (
+    <Menu>
+
+        
+        <Menu.Item key="1" icon={<UserOutlined />}>
+            <a>Profile</a>
+        </Menu.Item>                            
+                    
+        
+        <Menu.Item key="1" icon={<LogoutOutlined />}>
+            <a>Logout</a>
+        </Menu.Item>                            
+                    
+        
+      
+    </Menu>
+);
 
 
 
@@ -23,9 +42,7 @@ export default class Navbar extends Component {
         
     }
 
-    changeUser = () => {
-        getSummaryReport();
-    }
+    
 
     render() {
 
@@ -46,7 +63,7 @@ export default class Navbar extends Component {
 
                 <section className="navbar">
                     <a href="/browse" className="navbar-item">Browse</a>
-                    {/* <button onClick={this.changeUser}>Hello</button> */}
+                    
                     <a href="/about" className="navbar-item">About</a>
 
                     
@@ -67,11 +84,18 @@ export default class Navbar extends Component {
 
 
                     ) :   (
+                        <div className="navbar-item">
 
-                        <Link to="/account/profile">
-                            <a className="navbar-item">{this.props.data.first_name}</a>
-                    
-                        </Link>
+                            <Dropdown overlay={menu} >
+                                <Button>
+                                {this.props.data.first_name} <DownOutlined />
+                                </Button>
+                            </Dropdown>
+
+
+                        </div>
+                        
+                        
 
                     )}
                     

@@ -50,8 +50,8 @@ export default class App extends Component {
         localStorage.setItem('user', JSON.stringify(data))
     }
 
-    displayData = data => {
-        console.log(data);
+    passToBrowse = data => {
+        
         this.setState({
             toSearch: data
         });
@@ -68,7 +68,7 @@ export default class App extends Component {
                 
                     
                 <Switch>
-                    <Route exact path="/"> <LandingPage display = {this.displayData} /> </Route> 
+                    <Route exact path="/"> <LandingPage passToBrowse = {this.passToBrowse} /> </Route> 
                     <Route exact path="/about"> <AboutPage/> </Route> 
                     <Route exact path="/browse/"> <BrowsePage data={this.state.toSearch} /> </Route>
                     

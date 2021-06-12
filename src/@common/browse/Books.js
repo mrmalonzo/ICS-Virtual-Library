@@ -1,10 +1,7 @@
 import React from 'react';
 import '../../stylesheets/components/Books.css';
 
-const Books = ({ datas, loading }) => {
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+const Books = ({ datas }) => {
 
   return (
     <ul className='list-group mb-4'>
@@ -23,15 +20,23 @@ const Books = ({ datas, loading }) => {
               
               )}
             </div>
+            
+            { data.date_of_publication && (
+
+                <div className="date">
+                Date Published: {data.date_of_publication}
+                </div>
+
+            )}
+
+            { data.isbn && (
 
             <div className="date">
-                Date Published: {data.date_of_publication}
+            ISBN Number: {data.isbn}
             </div>
 
-            {/* <div className="description">
-                Description: {data.body}
-            </div> */}
-
+            )}
+          
             <div className="links">
               { data.sourcecode && (
                 <a href={data.sourcecode} className="source-code">
