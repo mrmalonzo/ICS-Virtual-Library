@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import GoogleLogin from 'react-google-login';
 import { Menu, Dropdown, Button} from 'antd';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { login } from '../../api/';
 import { Logo } from '../../assets/images';
@@ -11,27 +12,38 @@ import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
 
 
+
+
+const handleLogout = ()  => {
+        
+    console.log("Logging Out..")
+    window.localStorage.removeItem("user")
+    window.location.reload()
+}
+
+
 const menu = (
     <Menu>
-
-        
+            
         <Menu.Item key="1" icon={<UserOutlined />}>
             <a>Profile</a>
-        </Menu.Item>                            
-                    
+        </Menu.Item>  
         
-        <Menu.Item key="1" icon={<LogoutOutlined />}>
-            <a>Logout</a>
+            
+        <Menu.Item key="2" icon={<LogoutOutlined />} onClick={handleLogout} >
+            <a >Logout</a>
         </Menu.Item>                            
-                    
+                            
         
-      
     </Menu>
-);
 
 
 
-export default class Navbar extends Component {
+)
+
+
+
+class Navbar extends Component {
 
     handleLogin = async (googleData) => {
         
@@ -41,6 +53,33 @@ export default class Navbar extends Component {
         this.props.storeData(user.data);
         
     }
+
+    handleError = () => {
+        console.log("Error!")
+    }
+
+    handleLogout = ()  => {
+        this.props.history.push("/")
+        console.log("Logging Out..")
+        window.localStorage.removeItem("user")
+    }
+
+    menu = () => {(
+        <Menu>
+            
+            <Menu.Item key="1" icon={<UserOutlined />}>
+                <a>Profile</a>
+            </Menu.Item>  
+            
+                 
+            <Menu.Item key="2" icon={<LogoutOutlined />} onClick={this.handleLogout} >
+                <a >Logout</a>
+            </Menu.Item>                            
+                            
+        
+        </Menu>
+
+    )}
 
     
 
@@ -78,7 +117,7 @@ export default class Navbar extends Component {
                             )}
                             buttonText="Log in with Google"
                             onSuccess={this.handleLogin}
-                            onFailure={this.handleLogin}
+                            onFailure={this.handleError}
                             cookiePolicy={'single_host_origin'}
                         />
 
@@ -88,15 +127,12 @@ export default class Navbar extends Component {
 
                             <Dropdown overlay={menu} >
                                 <Button>
-                                {this.props.data.first_name} <DownOutlined />
+                                {this.props.data.first_name} <img className="profile-pic" src={this.props.data.image}/> 
                                 </Button>
                             </Dropdown>
 
 
                         </div>
-                        
-                        
-
                     )}
                     
                 </section>
@@ -105,7 +141,6 @@ export default class Navbar extends Component {
 
     }
 
-    
 }
 
-
+export default withRouter(Navbar);

@@ -14,7 +14,7 @@
     flex-direction: row;
     margin-right: 40px;
 
-  }
+}
   
 .navbar-item {  
     display: flex;
@@ -30,4 +30,14 @@
 
 .navbar-item:hover {
     color: blue;
+}
+
+.profile-pic {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: -5px;
+    margin-top: -3px;
+    
 }

@@ -37,6 +37,7 @@ class Results extends Component {
   onSearch = async (value) => {
 
     this.setState({
+      toSearch: value,
       loading: true
     })
     
@@ -59,7 +60,6 @@ class Results extends Component {
     }
 
     this.setState({
-      toSearch: value,
       loading: false
     })
 
@@ -67,11 +67,13 @@ class Results extends Component {
 }
 
   componentDidMount() {
-    this.onSearch(this.props.data);
+    this.setState({
+      toSearch: this.props.data
+    })
 
+    this.onSearch(this.props.data);
   }
 
-  
   render () {
       return (
         <div className='container'>
@@ -86,14 +88,22 @@ class Results extends Component {
           
           <div className="numresults">
 
-            { this.state.loading && (
+            {this.state.toSearch == null && (
+
+              <div>
+                <h4> What Will You Search For Today? </h4>
+              </div>
+
+            )}
+
+            {(this.state.loading == true && this.state.toSearch != null) && (
               <div className="loader">
               <Spin indicator={antIcon} size="default" />
               </div>
             )}
 
 
-            { (this.state.data != null && this.state.loading == false) && (
+            {(this.state.loading == false && this.state.toSearch != null) && (
                     
               <div>
                 <h4> Showing {this.state.data.length} Results for "{this.state.toSearch}" </h4>
@@ -108,10 +118,7 @@ class Results extends Component {
 
         </div>
       );
-
-
   }
-  
 };
 
 export default withRouter(Results);

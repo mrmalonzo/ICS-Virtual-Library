@@ -7,10 +7,6 @@ import '../stylesheets/pages/BrowsePage.css'
 
 class BrowsePage extends Component {
     
-    componentDidMount() {
-    
-
-    }
 
     render() {
 
