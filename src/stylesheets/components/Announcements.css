@@ -23,28 +23,20 @@
 .Container {
     
     display: flex;
-    justify-content: space-between;
     align-content: center;
-
+    justify-content: space-between;
     margin-top: 70px;
     margin-bottom: 70px;
     margin-left: 200px;
     margin-right: 200px;
     
-}
-
-.Announcement-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
     
 }
 
-.Announcement-2 {
+.Announcement {
     display: flex;
     flex-direction: column;
     align-items: left;
-
 }
 
 

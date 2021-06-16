@@ -44,7 +44,6 @@ class Results extends Component {
 
     try {
       const results = await search(value);
-      console.log(results);
       
       this.setState({
         data: results.data
@@ -67,11 +66,13 @@ class Results extends Component {
 }
 
   componentDidMount() {
-    this.setState({
-      toSearch: this.props.data
-    })
-
-    this.onSearch(this.props.data);
+    if (this.props.data != null) {
+      this.setState({
+        toSearch: this.props.data
+      })
+      this.onSearch(this.props.data);
+    }
+    
   }
 
   render () {
@@ -113,9 +114,6 @@ class Results extends Component {
 
        
           </div>
-
-          
-
         </div>
       );
   }

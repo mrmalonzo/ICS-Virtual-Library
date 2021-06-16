@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../stylesheets/components/Announcements.css';
+import { Link } from 'react-router-dom';
 
 import {
     Books,
@@ -13,28 +14,33 @@ const Announcements = () => {
 
         <div className="Container">
 
-            <div className="Announcement-1">
+            <div className="Announcement">
                 <img className="Announcement-image" src = {Books} alt="Books"/>
                 <h1 className="Image-title">Discover Books</h1>
 
                 <div className="Announcement-button">
-                    <h3> Browse </h3>
+                    <Link to="/browse">
+                        <h3> Browse </h3>
+                    </Link>
                 </div>
                 
             </div>
 
-            <div className="Announcement-2">
+            <div className="Announcement">
                 <img className="Announcement-image" src = {People} alt="People"/> 
 
                 <h1 className="Image-title">Learn More</h1>
-                <h4 className="Image-subtitle">Lorem isum dolor sit amet, consectetur <br/>adipiscing elit, sed do eiusmod </h4>
+                <h4 className="Image-subtitle">Get to know the students behind this <br/> virtual library. </h4>
 
                 <div className="Announcement-button">
-                    <h3> About </h3>
+                    <Link to="/about">
+                        <h3> About </h3>
+                    </Link>
+                    
                 </div>
             </div>
 
-            <div className="Announcement-3">
+            <div className="Announcement">
                 <img className="Announcement-image" src = {UPLB} alt="UPLB"/>
                 <h1 className="Image-title">Unlock Features</h1>
 
