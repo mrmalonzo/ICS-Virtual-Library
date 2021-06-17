@@ -10,7 +10,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 20%;
-	margin: 5px 75px 50px 200px;
+	margin: 5px 50px 50px 150px;
 
 }
 
@@ -25,10 +25,12 @@
 	padding: 10px;
 }
 
-#button-item-top{
-	border-top: 1px solid black;
+.button-item-a{
+	color: black;
+	text-decoration-line: none;
+
 }
 
-#button-item-bottom{
-	border-bottom: 1px solid black;
+#button-item-top{
+	border-top: 1px solid black;
 }

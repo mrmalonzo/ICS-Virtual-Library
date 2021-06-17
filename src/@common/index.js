@@ -1,13 +1,17 @@
 export { default as About } from './about/About'
 export { default as Announcements } from './announcements/Announcements';
 export { default as Details } from './details/Details';
+export { default as AdminDetails } from './details/AdminDetails';
 export { default as Footer } from './footer/Footer';
 export { default as Header } from './header/Header';
 export { default as Navbar } from './navbar/Navbar';
 export { default as NotFound } from './notfound/NotFound';
 export { default as Search } from './search/SearchField';
 export { default as Sidebar } from './sidebar/Sidebar';
+export { default as AdminSidebar } from './sidebar/AdminSidebar';
 export { default as Table } from './table/Table';
 export { default as Forbidden } from './forbidden/Forbidden';
 export { default as Results } from './browse/Results';
 export { default as Filter } from './browse/Filter';
+export { default as ActivityLog } from './summary/ActivityLog';
+export { default as SummaryReport } from './summary/SummaryReport';

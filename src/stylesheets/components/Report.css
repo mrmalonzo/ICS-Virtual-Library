@@ -1,0 +1,30 @@
+.report-container{
+    font-family: 'Gotham';
+    margin-left: 30%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+.report-header{
+    font-family: 'PT Serif';
+}
+
+.summary-entry{
+    margin-bottom: 30px;
+}
+
+.entry-title{
+    font-family: 'PT Serif';
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ant-tabs-nav-list{
+    font-family: 'PT Serif';
+    font-size: 24px;
+}
+
+.activity-entry{
+    margin-bottom: 15px;
+}

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { AdminSidebar, AdminDetails } from '@common';
 
 
-export default class AdminPage extends Component{
+export default class ActivityPage extends Component{
 
     render(){
         return (

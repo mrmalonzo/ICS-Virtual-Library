@@ -21,12 +21,15 @@
 .Profile h2 {
 
     font-family: "PT Serif";
+    margin-left: 30px;
     
 }
 
 .Profile {
     
+    margin-bottom: 400px;
+    display: flex;
+    align-items: center;
     
-
 
 }

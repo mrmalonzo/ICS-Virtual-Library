@@ -42,6 +42,16 @@
     
 }
 
+.profile-pic-big {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: -5px;
+    margin-top: -3px;
+    
+}
+
 .loader-navbar {
     margin-top: 30px;
     margin-left: 100px;

@@ -26,14 +26,34 @@ function itemRender(current, type, originalElement) {
 }
 
 
+
 class Results extends Component {
 
   state = {
     data: null,
     loading: true,
     toSearch: null,
-    isBooksChecked: false,
-    isPubsChecked: false
+    dataPerPage: 10,
+    currentPage: 1,
+    indexOfFirstData: 1,
+    indexOfLastData: 10
+
+  }
+
+
+  onChange = (pageNumber) => {
+
+    const lastIndex = pageNumber * this.state.dataPerPage
+    const firstIndex = lastIndex - this.state.dataPerPage
+    
+
+    this.setState({
+      currentPage: pageNumber,
+      indexOfLastData: lastIndex,
+      indexOfFirstData: firstIndex,
+    })
+
+
   }
 
   onSearch = async (value) => {
@@ -131,8 +151,9 @@ class Results extends Component {
             {(this.state.loading == false && this.state.toSearch != null) && (
                     
               <div>
-                <h4> Showing {this.state.data.length} Results for "{this.state.toSearch}" </h4>
-                <Books datas={this.state.data} />
+                <h4> {this.state.data.length} results for "{this.state.toSearch}" </h4>
+                <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
+                <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} itemRender={itemRender()} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
               </div>
             )}
        

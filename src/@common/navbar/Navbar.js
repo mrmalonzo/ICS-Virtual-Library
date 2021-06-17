@@ -6,24 +6,21 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { login } from '../../api/';
 import { Logo } from '../../assets/images';
-import { LoadingOutlined } from '@ant-design/icons';
-
-
 
 import { 
     Menu, 
     Dropdown, 
     Button,
-    Spin
+    Spin,
+    message
 } from 'antd';
-
 
 import { 
     UserOutlined, 
-    LogoutOutlined 
+    LogoutOutlined,
+    LoadingOutlined
 } from '@ant-design/icons';
     
-
 import '../../stylesheets/components/Navbar.css';
 import '../../stylesheets/components/Header.css';
 
@@ -32,8 +29,6 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 
 const handleLogout = ()  => {
-        
-    console.log("Logging Out..")
     window.localStorage.removeItem("user")
     window.location.reload()
 }
@@ -47,7 +42,7 @@ const menu = (
         </Menu.Item>  
             
         <Menu.Item key="2" icon={<LogoutOutlined />} onClick={handleLogout} >
-            <a >Logout</a>
+            <a>Logout</a>
         </Menu.Item>                            
                                     
     </Menu>
@@ -68,13 +63,16 @@ class Navbar extends Component {
         })
 
         try {
+
             const user = await login(googleData.tokenId);
             const auth = JSON.parse(user.config.data);
             user.data.token = auth.token;
             this.props.storeData(user.data);
 
+            message.success("Logged In Successfully!")
+
         } catch (e) {
-            this.props.prompt("Invalid Email!")
+            message.error("Invalid Login. Please Use UP Mail.")
         }
         
 
@@ -85,14 +83,9 @@ class Navbar extends Component {
     }
 
     handleError = () => {
-        console.log("Error!")
+        message.error("Invalid Login. Please Use UP Mail.")
     }
 
-    handleLogout = ()  => {
-        this.props.history.push("/")
-        console.log("Logging Out..")
-        window.localStorage.removeItem("user")
-    }
 
     clearSearch = () => {
         window.localStorage.removeItem("search-word")
@@ -127,6 +120,7 @@ class Navbar extends Component {
                         <div className="loader-navbar">
                             <Spin indicator={antIcon} size="default" />
                         </div>
+
                     ) : (
 
                         this.props.data == null ? (

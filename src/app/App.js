@@ -23,12 +23,11 @@ import {
     NotFoundPage,
     ForbiddenPage,
     AdminPage,
-    AboutPage
+    AboutPage,
+    AssignPage
 
 } from '../pages/'
 
-import { message } from 'antd';
-import 'antd/dist/antd.css';
 
 
 export default class App extends Component {
@@ -61,12 +60,6 @@ export default class App extends Component {
         });
     }
 
-    prompt = (message) => {
-
-        message.error("This is an Error Message")
-
-    }
-
 
     render() {
 
@@ -74,7 +67,7 @@ export default class App extends Component {
         return (
 
             <Fragment>
-                <Navbar data={ this.state.user } storeData={ this.storeData } prompt={this.prompt}/>
+                <Navbar data={ this.state.user } storeData={ this.storeData }/>
                 
                     
                 <Switch>
@@ -84,14 +77,25 @@ export default class App extends Component {
                     
                     
                     { this.state.user && (    
+                            
+
+                        this.state.user.user_type == "admin" ? (
+                            <Switch>
+                                <Route exact path="/account/profile/"> <AdminPage { ... this.state.user }/> </Route>
+                                <Route exact path="/account/assign"> <AssignPage/> </Route>
+                                <Route exact path="/account/activity-log"> <AssignPage/> </Route>
+                                <Route> <NotFoundPage/> </Route>
+                            </Switch>
+
+                        ) : (
                             <Switch>
                                 <Route exact path="/account/profile/"> <ProfilePage/> </Route>
-                                <Route exact path="/account/assign"> <AdminPage/> </Route>
-
                                 <Redirect exact from="/account" to="/account/profile"/>
+                                <Route exact path="/account/assign"> <ForbiddenPage/> </Route>
                                 <Route> <NotFoundPage/> </Route>
-                            </Switch>                            
-                            
+                            </Switch>
+
+                        )
                             
                     )}
 
