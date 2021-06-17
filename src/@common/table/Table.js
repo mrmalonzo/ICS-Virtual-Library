@@ -3,7 +3,7 @@ import MaterialTable from 'material-table';
 import '../../stylesheets/components/Table.css';
 
 import {readAllUsers, updateRole} from "../../api/students";
-
+import {message} from 'antd';
 
 export default class Table extends Component{
 
@@ -42,7 +42,12 @@ export default class Table extends Component{
     }
 
     updateRole = async (email) =>{
-        await updateRole(email); //change role to database
+        try{
+            await updateRole(email); //change role to database
+        } catch(e){
+            message.error("Cannot Update User.")
+        }
+        
     }
 
     render(){

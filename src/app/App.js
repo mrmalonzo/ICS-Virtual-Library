@@ -24,7 +24,9 @@ import {
     ForbiddenPage,
     AdminPage,
     AboutPage,
-    AssignPage
+    AssignPage,
+    ActivityPage,
+    SummaryPage
 
 } from '../pages/'
 
@@ -83,7 +85,8 @@ export default class App extends Component {
                             <Switch>
                                 <Route exact path="/account/profile/"> <AdminPage { ... this.state.user }/> </Route>
                                 <Route exact path="/account/assign"> <AssignPage/> </Route>
-                                <Route exact path="/account/activity-log"> <AssignPage/> </Route>
+                                <Route exact path="/account/activity-log"> <ActivityPage/> </Route>
+                                <Route exact path="/account/summary-reports"> <SummaryPage/> </Route>
                                 <Route> <NotFoundPage/> </Route>
                             </Switch>
 

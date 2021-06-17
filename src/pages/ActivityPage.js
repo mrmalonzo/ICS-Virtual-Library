@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import { AdminSidebar, AdminDetails } from '@common';
+import { AdminSidebar, ActivityLog } from '@common';
 
 
 export default class ActivityPage extends Component{
@@ -12,7 +12,7 @@ export default class ActivityPage extends Component{
             
             <div className="Assign-role">
                 <AdminSidebar className="Admin-menu"/>
-                <AdminDetails { ... this.props}/>
+                <ActivityLog/>
                 
             </div>
         
