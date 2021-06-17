@@ -15,6 +15,7 @@ import {
     Footer 
 } from '@common';
 
+
 import {
     LandingPage,
     ProfilePage,
@@ -25,6 +26,9 @@ import {
     AboutPage
 
 } from '../pages/'
+
+import { message } from 'antd';
+import 'antd/dist/antd.css';
 
 
 export default class App extends Component {
@@ -57,6 +61,12 @@ export default class App extends Component {
         });
     }
 
+    prompt = (message) => {
+
+        message.error("This is an Error Message")
+
+    }
+
 
     render() {
 
@@ -64,7 +74,7 @@ export default class App extends Component {
         return (
 
             <Fragment>
-                <Navbar data={ this.state.user } storeData={ this.storeData }/>
+                <Navbar data={ this.state.user } storeData={ this.storeData } prompt={this.prompt}/>
                 
                     
                 <Switch>

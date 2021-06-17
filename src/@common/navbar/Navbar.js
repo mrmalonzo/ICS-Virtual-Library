@@ -66,11 +66,17 @@ class Navbar extends Component {
         this.setState({
             loading: true
         })
+
+        try {
+            const user = await login(googleData.tokenId);
+            const auth = JSON.parse(user.config.data);
+            user.data.token = auth.token;
+            this.props.storeData(user.data);
+
+        } catch (e) {
+            this.props.prompt("Invalid Email!")
+        }
         
-        const user = await login(googleData.tokenId);
-        const auth = JSON.parse(user.config.data);
-        user.data.token = auth.token;
-        this.props.storeData(user.data);
 
         this.setState({
             loading: false
@@ -88,22 +94,9 @@ class Navbar extends Component {
         window.localStorage.removeItem("user")
     }
 
-    menu = () => {(
-        <Menu>
-            
-            <Menu.Item key="1" icon={<UserOutlined />}>
-                <a>Profile</a>
-            </Menu.Item>  
-            
-                 
-            <Menu.Item key="2" icon={<LogoutOutlined />} onClick={this.handleLogout} >
-                <a >Logout</a>
-            </Menu.Item>                            
-                            
-        
-        </Menu>
-
-    )}
+    clearSearch = () => {
+        window.localStorage.removeItem("search-word")
+    }
 
     
 
@@ -125,7 +118,7 @@ class Navbar extends Component {
 
 
                 <section className="navbar">
-                    <a href="/browse" className="navbar-item">Browse</a>
+                    <a onClick={this.clearSearch} href="/browse" className="navbar-item">Browse</a>
                     
                     <a href="/about" className="navbar-item">About</a>
 

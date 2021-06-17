@@ -6,7 +6,7 @@ import '../stylesheets/pages/BrowsePage.css'
 
 
 class BrowsePage extends Component {
-    
+
 
     render() {
 
@@ -14,7 +14,7 @@ class BrowsePage extends Component {
         
             <div className="Search-results">
     
-                <Filter/>
+                
                 
                 <Results data={this.props.data}/>
                 

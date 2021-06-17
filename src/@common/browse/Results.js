@@ -31,7 +31,9 @@ class Results extends Component {
   state = {
     data: null,
     loading: true,
-    toSearch: null
+    toSearch: null,
+    isBooksChecked: false,
+    isPubsChecked: false
   }
 
   onSearch = async (value) => {
@@ -48,30 +50,52 @@ class Results extends Component {
       this.setState({
         data: results.data
       });
-    
 
     } catch(e) {
-      console.log("Error")
+    
       this.setState({
         data: []
       });
 
     }
 
+    localStorage.setItem('search-word', value)
+
     this.setState({
       loading: false
     })
 
     this.props.history.push(`/browse?query=${value}`);  
-}
+  }
 
   componentDidMount() {
+
+    
+    /* 
+      Check first if the user is coming
+      from the landing page, and a prop
+      is passed. Otherwise, check local storage 
+      if refreshed to preserve search results.
+
+    */
+    
+    const searchWord = localStorage.getItem("search-word")
+    
     if (this.props.data != null) {
+
       this.setState({
         toSearch: this.props.data
       })
       this.onSearch(this.props.data);
-    }
+
+    } else if (searchWord != null) {
+      
+      this.setState({
+        toSearch: searchWord
+      })
+      this.onSearch(searchWord);
+
+    }      
     
   }
 
@@ -111,7 +135,6 @@ class Results extends Component {
                 <Books datas={this.state.data} />
               </div>
             )}
-
        
           </div>
         </div>

@@ -1,14 +1,7 @@
 import React from "react";
 import '../../stylesheets/components/Checkbox.css'
 
-const Checkbox = ({label, name , checkedMethod , passkey}) =>{
-	if(label === "ui"){ //to be printed beautifully
-		label = "UI/UX Design";
-	}else if(label === "imgprocess"){
-		label = "Image Processing";
-	}else if(label === "parallel"){
-		label = "Parallel Programming";
-	}
+const Checkbox = ({label, name, checkedMethod, passkey}) =>{
 
 
 	return(
@@ -18,7 +11,7 @@ const Checkbox = ({label, name , checkedMethod , passkey}) =>{
                 onChange = {checkedMethod}
                 key = {passkey}
 	  		/>
-	  		<label className="label">{(label === "specialproblems" ? "Special Problems" : label)}</label>
+	  		<label className="label">{label}</label>
         </div>
     );
 }
