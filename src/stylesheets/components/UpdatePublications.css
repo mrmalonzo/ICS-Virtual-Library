@@ -1,0 +1,58 @@
+
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+.update-books{
+	color: black;
+	font-family: Gotham;
+	/*border: 1px solid black;*/
+	width: 30%;
+	height:500px;
+	margin-bottom: 580px;
+/*	display: flex;*/
+}	
+
+.label{
+	font-size: 20px;
+}
+
+.input{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	width: 100%;
+	background-color: white;
+	height: 30px;
+}
+
+input[type="date"]{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	width: 100%;
+	font-size:18px;
+	height: 30px;
+	margin-left: 0px;
+	transform: scale(1);
+
+}
+
+.submit{
+	font-size: 20px;
+	float: right;
+	font-weight: bold;
+	color: white;
+	border-radius: 5px;
+	margin-top: 20px;
+	background-color: #16529E;
+}
+
+.label-mini{
+	font-size: 12px;
+	margin-left: 10px;
+}

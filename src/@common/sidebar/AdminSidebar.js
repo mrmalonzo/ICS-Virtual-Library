@@ -18,7 +18,10 @@ const AdminSidebar = () =>{
 
 			</Link>
             
-            <a className="button-item">Books</a>
+			<Link className="button-item" to="/account/books">
+            	<a className="button-item-a">Books</a>
+			</Link>
+
             <a className="button-item">Publications</a>
 
 			<Link className="button-item" to="/account/activity-log">

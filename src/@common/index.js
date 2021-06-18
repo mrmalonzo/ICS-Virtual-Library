@@ -15,3 +15,5 @@ export { default as Results } from './browse/Results';
 export { default as Filter } from './browse/Filter';
 export { default as ActivityLog } from './summary/ActivityLog';
 export { default as SummaryReport } from './summary/SummaryReport';
+export { default as CreateBook } from './create/CreateBook';
+export { default as CreatePublication} from './create/CreatePublication';

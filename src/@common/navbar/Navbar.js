@@ -51,7 +51,6 @@ const menu = (
 
 class Navbar extends Component {
 
-
     state = {
         loading: false
     }
@@ -155,9 +154,7 @@ class Navbar extends Component {
                 </section>
             </section>
         );
-
     }
-
 }
 
 export default withRouter(Navbar);

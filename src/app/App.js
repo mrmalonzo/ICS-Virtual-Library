@@ -26,7 +26,8 @@ import {
     AboutPage,
     AssignPage,
     ActivityPage,
-    SummaryPage
+    SummaryPage,
+    BooksPage
 
 } from '../pages/'
 
@@ -86,6 +87,7 @@ export default class App extends Component {
                                 <Route exact path="/account/profile/"> <AdminPage { ... this.state.user }/> </Route>
                                 <Route exact path="/account/assign"> <AssignPage/> </Route>
                                 <Route exact path="/account/activity-log"> <ActivityPage/> </Route>
+                                <Route exact path="/account/books"> <BooksPage/> </Route>
                                 <Route exact path="/account/summary-reports"> <SummaryPage/> </Route>
                                 <Route> <NotFoundPage/> </Route>
                             </Switch>
