@@ -175,6 +175,10 @@ class Results extends Component {
 
   }
 
+  passToView = (data) => {
+    this.props.passToView(data)
+  }
+
   render () {
       return (
         <div className='container'>
@@ -227,7 +231,7 @@ class Results extends Component {
                   {(this.state.data.length > 0 ? (
                     <div>
                       <h4> {this.state.data.length} Results For "{this.state.toSearch}" </h4>
-                      <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
+                      <Books passToView ={this.passToView}datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
                       <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
                     </div>
 

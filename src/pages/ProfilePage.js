@@ -9,7 +9,7 @@ export default class ProfilePage extends Component {
         return(   
             <div className="Whole-page">
                 <Sidebar className="Profile-menu"/>
-                <Details/>
+                <Details { ... this.props}/>
 
             </div>
         );

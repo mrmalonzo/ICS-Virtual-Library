@@ -28,7 +28,8 @@ import {
     ActivityPage,
     SummaryPage,
     BooksPage,
-    PublicationsPage
+    PublicationsPage,
+    ViewPage
 
 } from '../pages/'
 
@@ -67,6 +68,12 @@ export default class App extends Component {
 
     storeToView = data => {
 
+        this.setState({
+            toView: data
+        })
+
+        localStorage.setItem('to-view', data)
+
     }
 
 
@@ -80,9 +87,10 @@ export default class App extends Component {
                 
                     
                 <Switch>
-                    <Route exact path="/"> <LandingPage passToBrowse = {this.passToBrowse} /> </Route> 
+                    <Route exact path="/"> <LandingPage passToBrowse={this.passToBrowse} /> </Route> 
                     <Route exact path="/about"> <AboutPage/> </Route> 
-                    <Route exact path="/browse/"> <BrowsePage data={this.state.toSearch} /> </Route>
+                    <Route exact path="/browse/"> <BrowsePage passToView={this.storeToView} data={this.state.toSearch} /> </Route>
+                    <Route exact path="/view/"> <ViewPage data={this.state.toView} /> </Route>
                     
                     
                     { this.state.user && (    
@@ -101,7 +109,7 @@ export default class App extends Component {
 
                         ) : (
                             <Switch>
-                                <Route exact path="/account/profile/"> <ProfilePage/> </Route>
+                                <Route exact path="/account/profile/"> <ProfilePage { ... this.state.user }/> </Route>
                                 <Redirect exact from="/account" to="/account/profile"/>
                                 <Route exact path="/account/assign"> <ForbiddenPage/> </Route>
                                 <Route> <NotFoundPage/> </Route>

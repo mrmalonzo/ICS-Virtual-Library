@@ -1,0 +1,93 @@
+@font-face {
+	font-family: "PT Serif";
+	src: url("../../assets/fonts/PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("../../assets/fonts/Gotham.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("../../assets/fonts/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: "Gotham Medium";
+    src: url("../../assets/fonts/GothamMedium_1.ttf");
+}
+
+.View-with-document {
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1 {
+    font-family: "PT Serif Bold";
+}
+
+h2 {
+    font-family: "Gotham"
+    
+}
+
+.View-manuscript {
+    font-family: "Gotham Bold";
+}
+
+.View-document-viewer {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.View-documents {
+    display: flex;
+    flex-direction: row;
+}
+.View-outer-container {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.View-author-name {
+    margin-right: 5px;
+    display: inline-block;
+    text-decoration: underline;
+
+}
+
+.View-label {
+    margin-right: 5px;
+}
+
+.View-authors {
+    font-family: 'PT Serif';
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.View-inner-container {
+    font-family: "PT Serif";
+    margin-left: 40px;
+}
+
+.View-cover {
+    width: 25%;
+
+}
+
+.View-spinner {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 500px;
+}

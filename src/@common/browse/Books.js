@@ -6,9 +6,10 @@ import { withRouter } from "react-router";
 class Books extends Component {
 
 
-  onClick = (title) => {
+  onClick = (data) => {
+    this.props.passToView(data);
+    this.props.history.push(`/view?query=${data}`);
 
-    console.log(`/browse/${title}`);
 
   }
 
@@ -23,7 +24,13 @@ class Books extends Component {
             <div key={data.id} className='list-group-item'>
 
                 
-                <h1 className="book-title" onClick={() => this.onClick(data.title)}>
+                <h1 className="book-title" onClick={() => 
+                  {
+                    const toPass = data.isbn ? (data.isbn) : (data.title)
+                    this.onClick(toPass)}
+                  }>
+
+
                     {data.title}
                 </h1>
   

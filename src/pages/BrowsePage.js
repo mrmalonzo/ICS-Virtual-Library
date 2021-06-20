@@ -7,6 +7,10 @@ import '../stylesheets/pages/BrowsePage.css'
 
 class BrowsePage extends Component {
 
+    passToView = (data) => {
+        this.props.passToView(data)
+    }
+
 
     render() {
 
@@ -16,7 +20,7 @@ class BrowsePage extends Component {
     
                 
                 
-                <Results data={this.props.data}/>
+                <Results passToView={this.passToView} data={this.props.data}/>
                 
             </div>
         );

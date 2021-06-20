@@ -1,30 +1,26 @@
 import React, {Component} from "react";
 import "../../stylesheets/components/Details.css";
+import { Profile } from '../../assets/images';
 
 
 export default class Details extends Component {
 
-    state = {
-        user: null
-    }
-
     
-    componentDidMount() {
-        const data = JSON.parse(localStorage.getItem("user"))
-        this.setState({
-            user: data
-        });
-
-    }
     render() {
         return(
-            <div className="Profile">
+            <div className="Profile-container">
     
-                <h2>Student</h2>
-                <img className="profile-pic" src={this.state.user.image}/>
-                <p className="text">First Name</p>
+                <img className="Profile-illustration" src={Profile}/> 
+
+                <h2> Welcome, {this.props.first_name}!</h2>
+                <h3> 
+                    As a student, you are able to access the different books  <br/>
+                    and publications in our ICS Virtual Library. If you think this <br/>
+                    is a mistake, and you would like to request administrator<br/>
+                    capabilities, kindly contact ICS.
+
+                </h3>
                 
-             
             </div>
         );
     }
