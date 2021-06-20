@@ -17,6 +17,9 @@ import Books from './misc/books.png';
 import People from './misc/people-reading.png';
 import UPLB from './misc/uplb.png';
 
+import SearchIllustration from './misc/search.svg';
+import Profile from './misc/profile.svg';
+
 
 export {
     AboutBanner,
@@ -33,5 +36,7 @@ export {
     Logo,
     Books,
     People,
-    UPLB
+    UPLB,
+    SearchIllustration,
+    Profile
 }

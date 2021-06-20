@@ -9,18 +9,19 @@
     src: url("../../assets/fonts/Gotham.otf") format("opentype");
 }
 
-.update-books{
+.update-publications{
 	color: black;
 	font-family: Gotham;
 	/*border: 1px solid black;*/
-	width: 30%;
+	width: 500px;
 	height:500px;
 	margin-bottom: 580px;
 /*	display: flex;*/
 }	
 
-.label{
+.books-label{
 	font-size: 20px;
+	font-family: Gotham;
 }
 
 .input{

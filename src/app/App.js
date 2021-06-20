@@ -27,7 +27,8 @@ import {
     AssignPage,
     ActivityPage,
     SummaryPage,
-    BooksPage
+    BooksPage,
+    PublicationsPage
 
 } from '../pages/'
 
@@ -64,7 +65,7 @@ export default class App extends Component {
     }
 
 
-    render() {
+    render () {
 
 
         return (
@@ -88,6 +89,7 @@ export default class App extends Component {
                                 <Route exact path="/account/assign"> <AssignPage/> </Route>
                                 <Route exact path="/account/activity-log"> <ActivityPage/> </Route>
                                 <Route exact path="/account/books"> <BooksPage/> </Route>
+                                <Route exact path="/account/publications"> <PublicationsPage/> </Route>
                                 <Route exact path="/account/summary-reports"> <SummaryPage/> </Route>
                                 <Route> <NotFoundPage/> </Route>
                             </Switch>

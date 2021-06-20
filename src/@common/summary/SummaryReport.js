@@ -4,10 +4,6 @@ import { Tabs } from 'antd';
 import '../../stylesheets/components/Report.css';
 
 const { TabPane } = Tabs;
-    
-function callback(key) {
-        console.log(key);
-}
 
 class SummaryReport extends Component {
     
@@ -16,11 +12,11 @@ class SummaryReport extends Component {
     }
 
     componentDidMount = async () => {
-            const report =  await summaryreport();
-            console.log(report.data.summary);
-            this.setState({
-                data: report.data.summary
-            });            
+        const report =  await summaryreport();
+        
+        this.setState({
+            data: report.data.summary
+        });            
     }
 
     render() {

@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import '../../stylesheets/components/UpdateBooks.css';
 
-import {createBook} from "../../api/";
+import {updateBook} from "../../api/";
 import {Input, message} from 'antd';
 
-class CreateBook extends Component{
+class UpdateBook extends Component{
 	constructor(props){
 		super(props);
 		this.state={
 			isbn:"",
 			subject:"",
-            title:"",
 			authors:[],
 			date:new Date(),
 			keywords:[],
@@ -34,14 +33,13 @@ class CreateBook extends Component{
 	submitForm = async (e) => { //update book
 		e.preventDefault(); //to not refresh the page
 
-		const body = {isbn:this.state.isbn, title:this.state.title, subject:this.state.subject, authors:this.state.authors, date_of_publication:this.state.date, keywords:this.state.keywords, cover:this.state.cover}; //put them into one object to json
+		const body = {subject:this.state.subject, authors:this.state.authors, date_of_publication:this.state.date, keywords:this.state.keywords, cover:this.state.cover}; //put them into one object to json
 
-        console.log(body)
 		try{ //pass it into the api
-			await createBook(JSON.stringify(body))
-			message.success("Book Created!");
+			console.log(await updateBook(this.state.isbn, JSON.stringify(body)));
+			message.success("Book Updated!");
 		}catch(e){
-			message.error("Failed to Create book.");
+			message.error("Failed to update book.");
 		}
 
 	}
@@ -49,15 +47,11 @@ class CreateBook extends Component{
 	render(){
 		
 		return(
-			<div className="create-books">
+			<div className="update-books">
 			<form onSubmit ={this.submitForm} className="update-form">
 				<label className="books-label">ISBN</label>
 				<br/>
 				<Input type="text" name="isbn" className="input" onChange={this.onChange} required/>
-				<br/>
-                <label className="books-label">Title</label>
-				<br/>
-				<Input type="text" name="title" className="input" onChange={this.onChange} required/>
 				<br/>
 				<label className="books-label">Subject</label>
 				<br/>
@@ -79,7 +73,7 @@ class CreateBook extends Component{
 				<br/>
 				<Input type="text" name="cover" className="input" onChange={this.onChange} required/>
 				<br/>
-				<button type="submit" className="submit-book">Create</button>
+				<button type="submit" className="submit-book">Update</button>
 			</form>
 			</div>
 
@@ -88,4 +82,4 @@ class CreateBook extends Component{
 
 }
 
-export default CreateBook;
+export default UpdateBook;

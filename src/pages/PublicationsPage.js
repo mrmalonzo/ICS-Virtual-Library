@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Tabs } from 'antd';
-import { AdminSidebar, CreateBook, UpdateBook, DeleteBook } from '@common';
+import { AdminSidebar, CreatePublication, UpdatePublication, DeletePublication } from '@common';
 
 import '../stylesheets/pages/BooksPage.css'
 
@@ -17,14 +17,14 @@ export default class BooksPage extends Component{
                 <AdminSidebar className="Admin-menu"/>
 
                 <Tabs defaultActiveKey="1" >
-                    <TabPane tab="Create Book" key="1">
-                    <CreateBook/>
+                    <TabPane tab="Create Publication" key="1">
+                    <CreatePublication/>
                     </TabPane>
-                    <TabPane tab="Update Book" key="2">
-                    <UpdateBook/>
+                    <TabPane tab="Update Publication" key="2">
+                    <UpdatePublication/>
                     </TabPane>
-                    <TabPane tab="Delete Book" key="3">
-                    <DeleteBook/>
+                    <TabPane tab="Delete Publication" key="3">
+                    <DeletePublication/>
                     </TabPane>
                 </Tabs>
                 

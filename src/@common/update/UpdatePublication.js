@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import '../../stylesheets/components/UpdatePublications.css';
 
-import {createPublication} from "../../api/";
+import {updatePublication} from "../../api/";
 import {Input, message} from 'antd';
 
-class CreatePublication extends Component{
+
+class UpdatePublication extends Component{
 	constructor(props){
 		super(props);
 		this.state={
@@ -39,13 +40,7 @@ class CreatePublication extends Component{
 	submitForm = async (e) => { //update book
 		e.preventDefault(); //to not refresh the page
 
-		const body = {	
-            title: this.state.title,
-            subject: this.state.subject, 
-            authors: this.state.authors, 
-            date_of_publication: this.state.date, 
-            keywords: this.state.keywords, 
-            publication_type: this.state.publication_type,
+		const body = {	subject:this.state.subject, authors:this.state.authors, date_of_publication:this.state.date, keywords:this.state.keywords, publication_type:this.state.publication_type,
 			abstract:this.state.abstract, 
 			poster:this.state.poster,
 			manuscript:this.state.manuscript,
@@ -55,12 +50,11 @@ class CreatePublication extends Component{
 			}; //put them into one object to json
 
 		try{
-
-			await createPublication(JSON.stringify(body))
-			message.success("Publication Created!");
-
-		} catch(e) {
-			message.error("Failed to Create Publication.");
+			console.log(body)
+			await updatePublication(this.state.title, JSON.stringify(body)); //pass it into the api
+			message.success("Publication Updated!");
+		}catch(e){
+			message.error("Failed to update publication.");
 		}
 		
 	}
@@ -79,7 +73,7 @@ class CreatePublication extends Component{
 					<br/>
 					<Input type="text" name="subject" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Authors</label><label className="label-mini">Put a Comma (,) as Separator for Each Keyword</label>
+					<label className="books-label">Authors</label><label className="label-mini">*put a comma (,) as seperator for each author</label>
 					<br/>
 					<Input type="text" name="authors" className="input" onChange={this.onChange} required/>
 					<br/>
@@ -87,7 +81,7 @@ class CreatePublication extends Component{
 					<br/>
 					<Input type="date" name="date" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Keywords</label><label className="label-mini">Put a Comma (,) as Separator for Each Keyword</label>
+					<label className="books-label">Keywords</label><label className="label-mini">*put a comma (,) as seperator for each keyword</label>
 					<br/>
 					<Input type="text" name="keywords" className="input" onChange={this.onChange} required/>
 					<br/>
@@ -98,32 +92,32 @@ class CreatePublication extends Component{
 						<option value="thesis">Thesis</option>
 					</select>
 					<br/>
-					<label className="books-label">Abstract</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Abstract</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="abstract" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Poster</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Poster</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="poster" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Manuscript</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Manuscript</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="manuscript" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Source Code</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Source Code</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="sourcecode" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Journal</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Journal</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="journal" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Cover</label><label className="label-mini">Links Only</label>
+					<label className="books-label">Cover</label><label className="label-mini">*links only</label>
 					<br/>
 					<Input type="text" name="cover" className="input" onChange={this.onChange} required/>
 					<br/>
 					</div>
-					<button type="submit" className="submit-book">Create</button>
+                    <button type="submit" className="submit-book">Update</button>
 			</form>
 			</div>
 
@@ -132,4 +126,4 @@ class CreatePublication extends Component{
 
 }
 
-export default CreatePublication;
+export default UpdatePublication;

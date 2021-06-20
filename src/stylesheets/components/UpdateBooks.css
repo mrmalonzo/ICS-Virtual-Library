@@ -9,26 +9,21 @@
     src: url("../../assets/fonts/Gotham.otf") format("opentype");
 }
 
-.update-books{
+.create-books{
 	color: black;
 	font-family: Gotham;
 	/*border: 1px solid black;*/
-	width: 30%;
-	height:500px;
 	margin-bottom: 100px;
 /*	display: flex;*/
 }	
 
-.label{
-	font-size: 20px;
+.books-label{
+	font-size: 18px;
 }
 
-.input{
-	margin-top: 5px;
+.ant-input{
 	margin-bottom: 15px;
-	width: 100%;
 	background-color: white;
-	height: 30px;
 }
 
 input[type="date"]{
@@ -42,16 +37,30 @@ input[type="date"]{
 
 }
 
-.submit{
-	font-size: 20px;
-	float: right;
-	font-weight: bold;
-	color: white;
-	border-radius: 5px;
-	margin-top: 20px;
-	background-color: #16529E;
+.submit-book:hover {
+
+	
+	background-color: white;
+	color: #16529E;
+	
+
 }
 
+
+.submit-book{
+	transition-duration: 0.4s;
+	background-color: #16529E; /* Green */
+  	border: 1px solid #16529E;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	margin: 4px 2px;
+  	cursor: pointer;
+	font-size: 16px;
+	float: right;
+}
 .label-mini{
 	font-size: 12px;
 	margin-left: 10px;

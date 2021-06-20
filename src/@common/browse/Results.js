@@ -2,29 +2,20 @@ import React, { Component } from 'react';
 import Books from './Books';
 import { withRouter } from "react-router";
 
-import { search } from '../../api';
+import { searchAll, searchBooks, searchPublications } from '../../api';
 
-import { Pagination, Input, Spin } from 'antd';
+import { Pagination, Input, Spin, Radio, Space } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
+import { SearchIllustration, Profile} from '../../assets/images';
 import '../../stylesheets/components/Results.css';
-
 
 
 const { Search } = Input;
 const antIcon = <LoadingOutlined style={{ fontSize: 36 }} spin />;
 
 
-function itemRender(current, type, originalElement) {
-  if (type === 'prev') {
-    return <a>Previous</a>;
-  }
-  if (type === 'next') {
-    return <a>Next</a>;
-  }
-  return originalElement;
-}
-
+const searchTerms = ["ai", "computer", "technology", "programming", "advancement", "philippines"]
 
 
 class Results extends Component {
@@ -33,9 +24,10 @@ class Results extends Component {
     data: null,
     loading: true,
     toSearch: null,
+    type: "all",
     dataPerPage: 10,
     currentPage: 1,
-    indexOfFirstData: 1,
+    indexOfFirstData: 0,
     indexOfLastData: 10
 
   }
@@ -52,7 +44,8 @@ class Results extends Component {
       indexOfLastData: lastIndex,
       indexOfFirstData: firstIndex,
     })
-
+    
+    window.scrollTo(0, 0)
 
   }
 
@@ -60,17 +53,33 @@ class Results extends Component {
 
     this.setState({
       toSearch: value,
-      loading: true
+      loading: true,
     })
     
 
     try {
-      const results = await search(value);
-      
-      this.setState({
-        data: results.data
-      });
 
+      
+      if (this.state.type == "books") {
+        const results = await searchBooks(value)
+        this.setState({
+          data: results.data
+        });
+
+      } else if (this.state.type == "publications") {
+        const results = await searchPublications(value)
+        this.setState({
+          data: results.data
+        });
+      } else {
+        const results = await searchAll(value);
+        this.setState({
+          data: results.data
+        });
+
+      }
+      
+      
     } catch(e) {
     
       this.setState({
@@ -119,43 +128,109 @@ class Results extends Component {
     
   }
 
+  onTypeChange = async (e) => {
+
+    const value = localStorage.getItem("search-word")
+
+    this.setState({
+      toSearch: value,
+      loading: true,
+    })
+
+    if (e.target.value == "All") {
+      this.setState({
+        type:"all"
+      })
+      const results = await searchAll(value);
+      this.setState({
+        data: results.data,
+      });
+    } else if (e.target.value == "Books") {
+      this.setState({
+        type:"books"
+      })
+      const results = await searchBooks(value)
+      this.setState({
+        data: results.data,
+      });
+
+    } else if (e.target.value == "Publications") {
+      this.setState({
+        type:"publications"
+      })
+      const results = await searchPublications(value);
+      this.setState({
+        data: results.data,
+      });
+
+    }
+
+    localStorage.setItem('search-word', value)
+
+    this.setState({
+      loading: false
+    })
+
+  }
+
   render () {
       return (
         <div className='container'>
+
+          <div className='radio-group'>
+            <Radio.Group onChange={this.onTypeChange}defaultValue="All">
+              <Space direction="vertical">
+                <Radio.Button value="All">All</Radio.Button>
+                <Radio.Button value="Books">Books</Radio.Button>
+                <Radio.Button value="Publications">Publications</Radio.Button>
+              </Space>
+            </Radio.Group>
+
+          </div>
+
+
+          <div className='results-container'>
+
+            <Search
+              placeholder="Search ICS Virtual Library"
+              style = {{ marginBottom: 20 }}
+              enterButton="Search"
+              size="large"
+              onSearch={this.onSearch}
+            />
+            
+            <div className="numresults">
+
+              {this.state.toSearch == null && (
+
+                <div>
+                  <h4> What Will You Discover Today? </h4>
+                  
+                  <img src={SearchIllustration}/>
+                </div>
+
+              )}
+
+              {(this.state.loading == true && this.state.toSearch != null) && (
+                <div className="loader">
+                <Spin indicator={antIcon} size="default" />
+                </div>
+              )}
+
+
+              {(this.state.loading == false && this.state.toSearch != null) && (
+                      
+                <div>
+                  <h4> {this.state.data.length} results for "{this.state.toSearch}" </h4>
+                  <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
+                  <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
+                </div>
+              )}
+
+
+          </div>
           
-          <Search
-            placeholder="Search ICS Virtual Library"
-            style = {{ marginBottom: 20 }}
-            enterButton="Search"
-            size="large"
-            onSearch={this.onSearch}
-          />
           
-          <div className="numresults">
-
-            {this.state.toSearch == null && (
-
-              <div>
-                <h4> What Will You Search For Today? </h4>
-              </div>
-
-            )}
-
-            {(this.state.loading == true && this.state.toSearch != null) && (
-              <div className="loader">
-              <Spin indicator={antIcon} size="default" />
-              </div>
-            )}
-
-
-            {(this.state.loading == false && this.state.toSearch != null) && (
-                    
-              <div>
-                <h4> {this.state.data.length} results for "{this.state.toSearch}" </h4>
-                <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
-                <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} itemRender={itemRender()} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
-              </div>
-            )}
        
           </div>
         </div>

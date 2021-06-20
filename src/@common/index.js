@@ -17,3 +17,7 @@ export { default as ActivityLog } from './summary/ActivityLog';
 export { default as SummaryReport } from './summary/SummaryReport';
 export { default as CreateBook } from './create/CreateBook';
 export { default as CreatePublication} from './create/CreatePublication';
+export { default as UpdatePublication} from './update/UpdatePublication';
+export { default as UpdateBook} from './update/UpdateBook';
+export { default as DeleteBook} from './delete/DeleteBook';
+export { default as DeletePublication} from './delete/DeletePublication';
