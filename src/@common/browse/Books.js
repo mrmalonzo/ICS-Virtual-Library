@@ -4,63 +4,70 @@ import '../../stylesheets/components/Books.css';
 const Books = ({ datas }) => {
 
   return (
-    <ul className='list-group mb-4'>
+    <div className='list-group mb-4'>
       {datas.map(data => (
-        <li key={data.id} className='list-group-item'>
-            <h1 className="book-title">
-                {data.title}
-            </h1>
 
-            <div className="author">
-              by {data.authors.map((authors) => 
+        <div className="book-container">
+          <img src={data.cover} className="book-cover"></img>
+          <div key={data.id} className='list-group-item'>
+              <h1 className="book-title">
+                  {data.title}
+              </h1>
+
+              <div className="author">
+                by {data.authors.map((authors) => 
+                  
+                    <div className="author-name">
+                      {authors} 
+                    </div>
                 
-                  <div className="author-name">
-                    {authors} 
-                  </div>
+                )}
+              </div>
               
+              { data.date_of_publication && (
+
+                  <div className="date">
+                  Date Published: {data.date_of_publication}
+                  </div>
+
               )}
-            </div>
+
+              { data.isbn && (
+
+              <div className="date">
+              ISBN Number: {data.isbn}
+              </div>
+
+              )}
             
-            { data.date_of_publication && (
+              <div className="links">
+                { data.sourcecode && (
+                  <a href={data.sourcecode} className="source-code">
+                    Source Code
+                  </a>
+                )}
 
-                <div className="date">
-                Date Published: {data.date_of_publication}
-                </div>
+                { data.manuscript && (
+                  <a href={data.manuscript} className="source-code">
+                    Manuscript
+                  </a>
+                )}
 
-            )}
+                { data.abstract && (
+                  <a href={data.abstract} className="source-code">
+                    Abstract
+                  </a>
+                )}
 
-            { data.isbn && (
+              </div>
+              
+          </div>
 
-            <div className="date">
-            ISBN Number: {data.isbn}
-            </div>
-
-            )}
-          
-            <div className="links">
-              { data.sourcecode && (
-                <a href={data.sourcecode} className="source-code">
-                  Source Code
-                </a>
-              )}
-
-              { data.manuscript && (
-                <a href={data.manuscript} className="source-code">
-                  Manuscript
-                </a>
-              )}
-
-              { data.abstract && (
-                <a href={data.abstract} className="source-code">
-                  Abstract
-                </a>
-              )}
-
-            </div>
-            
-        </li>
-      ))}
-    </ul>
+        </div>
+      )
+      
+      )}
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ import { searchAll, searchBooks, searchPublications } from '../../api';
 import { Pagination, Input, Spin, Radio, Space } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
-import { SearchIllustration, Profile} from '../../assets/images';
+import { SearchIllustration, Searching} from '../../assets/images';
 import '../../stylesheets/components/Results.css';
 
 
@@ -206,7 +206,7 @@ class Results extends Component {
                 <div>
                   <h4> What Will You Discover Today? </h4>
                   
-                  <img src={SearchIllustration}/>
+                  <img src={SearchIllustration} className="search-illustration"/>
                 </div>
 
               )}
@@ -221,9 +221,22 @@ class Results extends Component {
               {(this.state.loading == false && this.state.toSearch != null) && (
                       
                 <div>
-                  <h4> {this.state.data.length} results for "{this.state.toSearch}" </h4>
-                  <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
-                  <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
+                  {(this.state.data.length > 0 ? (
+                    <div>
+                      <h4> {this.state.data.length} Results For "{this.state.toSearch}" </h4>
+                      <Books datas={this.state.data.slice(this.state.indexOfFirstData, this.state.indexOfLastData)} />
+                      <Pagination style={{ marginBottom: 20, textAlign: 'center' }} total={this.state.data.length} onChange={this.onChange} defaultPageSize={this.state.dataPerPage} showSizeChanger={false}/>
+                    </div>
+
+                  ):(
+                    <div>
+                      <h4> No Results For "{this.state.toSearch}" </h4>
+                      <img src={Searching} className="search-illustration"/>
+                    </div>
+
+                  ))}
+                 
+      
                 </div>
               )}
 

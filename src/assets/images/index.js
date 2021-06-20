@@ -19,6 +19,7 @@ import UPLB from './misc/uplb.png';
 
 import SearchIllustration from './misc/search.svg';
 import Profile from './misc/profile.svg';
+import Searching from './misc/searching.svg';
 
 
 export {
@@ -38,5 +39,6 @@ export {
     People,
     UPLB,
     SearchIllustration,
-    Profile
+    Profile,
+    Searching
 }
