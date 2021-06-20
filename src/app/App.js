@@ -38,7 +38,8 @@ export default class App extends Component {
 
     state = {   
         user: null,
-        toSearch: null
+        toSearch: null,
+        toView: null
     }
 
     componentDidMount() {
@@ -62,6 +63,10 @@ export default class App extends Component {
         this.setState({
             toSearch: data
         });
+    }
+
+    storeToView = data => {
+
     }
 
 

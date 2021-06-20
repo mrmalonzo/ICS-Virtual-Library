@@ -73,7 +73,7 @@ class UpdatePublication extends Component{
 					<br/>
 					<Input type="text" name="subject" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Authors</label><label className="label-mini">*put a comma (,) as seperator for each author</label>
+					<label className="books-label">Authors</label><label className="label-mini">Put a Comma (,) as Separator for Each Keyword</label>
 					<br/>
 					<Input type="text" name="authors" className="input" onChange={this.onChange} required/>
 					<br/>
@@ -81,7 +81,7 @@ class UpdatePublication extends Component{
 					<br/>
 					<Input type="date" name="date" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Keywords</label><label className="label-mini">*put a comma (,) as seperator for each keyword</label>
+					<label className="books-label">Keywords</label><label className="label-mini">Put a Comma (,) as Separator for Each Keyword</label>
 					<br/>
 					<Input type="text" name="keywords" className="input" onChange={this.onChange} required/>
 					<br/>
@@ -92,27 +92,27 @@ class UpdatePublication extends Component{
 						<option value="thesis">Thesis</option>
 					</select>
 					<br/>
-					<label className="books-label">Abstract</label><label className="label-mini">*links only</label>
+					<label className="books-label">Abstract</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="abstract" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Poster</label><label className="label-mini">*links only</label>
+					<label className="books-label">Poster</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="poster" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Manuscript</label><label className="label-mini">*links only</label>
+					<label className="books-label">Manuscript</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="manuscript" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Source Code</label><label className="label-mini">*links only</label>
+					<label className="books-label">Source Code</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="sourcecode" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Journal</label><label className="label-mini">*links only</label>
+					<label className="books-label">Journal</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="journal" className="input" onChange={this.onChange} required/>
 					<br/>
-					<label className="books-label">Cover</label><label className="label-mini">*links only</label>
+					<label className="books-label">Cover</label><label className="label-mini">Links only</label>
 					<br/>
 					<Input type="text" name="cover" className="input" onChange={this.onChange} required/>
 					<br/>

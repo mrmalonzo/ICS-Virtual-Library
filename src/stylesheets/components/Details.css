@@ -18,18 +18,31 @@
     src: url("../../assets/fonts/GothamMedium_1.ttf");
 }
 
-.Profile h2 {
-
-    font-family: "PT Serif";
-    margin-left: 30px;
-    
+@font-face {
+	font-family: "PT Serif Bold";
+	src: url("../../assets/fonts/PTSerif-Bold.ttf");
 }
 
-.Profile {
+
+.Profile-container h2 {
+    font-family: "PT Serif Bold";
+}
+
+.Profile-container h3 {
+    font-family: "Gotham";
+}
+.Profile-illustration {
+    width: 25%;
+    margin-bottom: 35px;
+}
+
+
+.Profile-container {
     
-    margin-bottom: 400px;
+    margin-bottom: 100px;
     display: flex;
-    align-items: center;
+    margin-left: 50px;
+    flex-direction: column;
     
 
 }

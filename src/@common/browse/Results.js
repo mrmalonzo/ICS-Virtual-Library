@@ -132,6 +132,8 @@ class Results extends Component {
 
     const value = localStorage.getItem("search-word")
 
+    this.onChange(1);
+    
     this.setState({
       toSearch: value,
       loading: true,
@@ -178,6 +180,7 @@ class Results extends Component {
         <div className='container'>
 
           <div className='radio-group'>
+          <h2 className = "filter-title">Refine Results</h2>
             <Radio.Group onChange={this.onTypeChange}defaultValue="All">
               <Space direction="vertical">
                 <Radio.Button value="All">All</Radio.Button>
