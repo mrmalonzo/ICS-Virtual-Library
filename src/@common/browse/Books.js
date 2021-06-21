@@ -78,6 +78,18 @@ class Books extends Component {
                       Abstract
                     </a>
                   )}
+
+                  { data.journal && (
+                    <a href={data.journal} className="source-code">
+                      Journal
+                    </a>
+                  )}
+
+                  { data.poster && (
+                    <a href={data.poster} className="source-code">
+                      Poster
+                    </a>
+                  )}
   
                 </div>
                 

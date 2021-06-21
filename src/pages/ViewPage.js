@@ -116,6 +116,39 @@ class ViewPage extends Component {
                                         </div>
 
                                     )}
+
+                                <div className="links">
+                                        { this.state.data.sourcecode && (
+                                            <a href={this.state.data.sourcecode} className="source-code">
+                                            Source Code
+                                            </a>
+                                        )}
+                        
+                                        { this.state.data.manuscript && (
+                                            <a href={this.state.data.manuscript} className="source-code">
+                                            Manuscript
+                                            </a>
+                                        )}
+                        
+                                        { this.state.data.abstract && (
+                                            <a href={this.state.data.abstract} className="source-code">
+                                            Abstract
+                                            </a>
+                                        )}
+
+                                        { this.state.data.journal && (
+                                            <a href={this.state.data.journal} className="source-code">
+                                            Journal
+                                            </a>
+                                        )}
+
+                                        { this.state.data.poster && (
+                                            <a href={this.state.data.poster} className="source-code">
+                                            Poster
+                                            </a>
+                                        )}
+                        
+                                </div>
                                     
                                 </div>
                             </div>

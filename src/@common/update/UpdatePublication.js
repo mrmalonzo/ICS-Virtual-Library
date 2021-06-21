@@ -83,7 +83,7 @@ class UpdatePublication extends Component{
 					<br/>
 					<label className="books-label">Keywords</label><label className="label-mini">Put a Comma (,) as Separator for Each Keyword</label>
 					<br/>
-					<Input type="text" name="keywords" className="input" onChange={this.onChange} required/>
+					<Input type="text" name="keywords" className="input" onChange={this.onChange}/>
 					<br/>
 					<label className="books-label">Publication Type</label>
 					<br/>
