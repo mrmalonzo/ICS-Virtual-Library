@@ -41,7 +41,7 @@ const About = () => {
     return(
         
         <div>
-            <img className="Hero-image-about" src={AboutBanner} alt ="Hero Image"/>
+            <img className="Hero-image-about" src={AboutBanner} alt ="Hero"/>
 
             
             <h1 className="Meet-devs">Meet The Students Behind ICS Virtual Library</h1>

@@ -6,7 +6,6 @@ import React, {
 import { 
     Redirect, 
     Route, 
-    BrowserRouter, 
     Switch 
 } from 'react-router-dom';
 
@@ -96,7 +95,7 @@ export default class App extends Component {
                     { this.state.user && (    
                             
 
-                        this.state.user.user_type == "admin" ? (
+                        this.state.user.user_type === "admin" ? (
                             <Switch>
                                 <Route exact path="/account/profile/"> <AdminPage { ... this.state.user }/> </Route>
                                 <Route exact path="/account/assign"> <AssignPage/> </Route>

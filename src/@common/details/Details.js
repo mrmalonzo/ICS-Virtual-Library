@@ -3,6 +3,7 @@ import "../../stylesheets/components/Details.css";
 import { Profile } from '../../assets/images';
 
 
+
 export default class Details extends Component {
 
     
@@ -10,7 +11,7 @@ export default class Details extends Component {
         return(
             <div className="Profile-container">
     
-                <img className="Profile-illustration" src={Profile}/> 
+                <img className="Profile-illustration" src={Profile} alt="Profile-illustration"/> 
 
                 <h2> Welcome, {this.props.first_name}!</h2>
                 <h3> 

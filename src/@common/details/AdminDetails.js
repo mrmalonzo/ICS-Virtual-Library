@@ -23,7 +23,7 @@ export default class AdminDetails extends Component {
         return(
             <>
                 <div className="Profile-container">
-                    <img className="Profile-illustration" src={Profile}/> 
+                    <img className="Profile-illustration" src={Profile} alt="Profile-illustration"/> 
 
                     <h2> Welcome, {this.props.first_name}!</h2>
                     <h3> 

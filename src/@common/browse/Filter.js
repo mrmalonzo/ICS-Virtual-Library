@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import Checkbox from './Checkbox';
 import "../../stylesheets/components/Filter.css";
 import "../../stylesheets/components/Checkbox.css";
@@ -22,7 +21,7 @@ export default class Filter extends Component {
 
 		if (e.target.name === "Books") {
 
-			const isChecked = (this.state.books == true ? false : true);
+			const isChecked = (this.state.books === true ? false : true);
 
 			this.setState({
 				books: isChecked
@@ -33,7 +32,7 @@ export default class Filter extends Component {
 
 		} else if (e.target.name === "Publications") {
 
-			const isChecked = (this.state.publications == true ? false : true);
+			const isChecked = (this.state.publications === true ? false : true);
 
 			this.setState({
 				publications: isChecked

@@ -1,4 +1,4 @@
-import React, { useState , Component } from 'react';
+import React, { Component } from 'react';
 import MaterialTable from 'material-table';
 import '../../stylesheets/components/Table.css';
 
@@ -35,7 +35,7 @@ export default class DeletePublication extends Component{
 
     async componentDidMount(){
         const allPublications = await getAllPublications(); //get the users from db using api
-        allPublications.data.pubs.map(pub => {
+        allPublications.data.pubs.forEach(pub => {
             pub.authors = pub.authors.join(', ');
         });
         console.log(allPublications.data.pubs);

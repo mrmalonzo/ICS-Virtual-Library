@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-
-import { AdminSidebar, ActivityLog, SummaryReport } from '@common';
+import { AdminSidebar, SummaryReport } from '@common';
 
 
 export default class ActivityPage extends Component{

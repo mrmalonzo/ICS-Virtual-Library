@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import { AdminSidebar, AdminDetails, Table, Footer, Details} from '@common';
+
+import { AdminSidebar, Table} from '@common';
 
 
 const AssignPage = () => {

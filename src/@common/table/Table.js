@@ -1,4 +1,4 @@
-import React, { useState , Component } from 'react';
+import React, { Component } from 'react';
 import MaterialTable from 'material-table';
 import '../../stylesheets/components/Table.css';
 

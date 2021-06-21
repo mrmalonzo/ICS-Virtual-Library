@@ -115,7 +115,7 @@ class Navbar extends Component {
                     <a href="/about" className="navbar-item">About</a>
 
 
-                    {this.state.loading == true ? (
+                    {this.state.loading === true ? (
                         <div className="loader-navbar">
                             <Spin indicator={antIcon} size="default" />
                         </div>

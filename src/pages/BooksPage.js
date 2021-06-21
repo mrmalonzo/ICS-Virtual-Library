@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import { Tabs } from 'antd';
 import { AdminSidebar, CreateBook, UpdateBook, DeleteBook } from '@common';
 

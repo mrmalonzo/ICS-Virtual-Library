@@ -20,7 +20,7 @@ class Books extends Component {
         {this.props.datas.map(data => (
   
           <div className="book-container">
-            <img src={data.cover} className="book-cover"></img>
+            <img src={data.cover} className="book-cover" alt ="Book-Cover"></img>
             <div key={data.id} className='list-group-item'>
 
                 

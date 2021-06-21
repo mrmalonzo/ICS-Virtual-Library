@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { search } from '../../api';
 import { withRouter } from "react-router";
 
 
@@ -7,7 +6,7 @@ import hero from '../../assets/images/hero/hero_image_3.png';
 import 'antd/dist/antd.css';
 import '../../stylesheets/components/Search.css';
 
-import { Input, Space } from 'antd';
+import { Input  } from 'antd';
 
 
 const { Search } = Input
@@ -38,7 +37,7 @@ class SearchField extends Component  {
                     
                 </div>
                 
-                <img className="Hero-image" src={hero} alt ="Hero Image"/>
+                <img className="Hero-image" src={hero} alt ="Hero"/>
                 
             </div>
     

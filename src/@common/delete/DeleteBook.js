@@ -1,4 +1,4 @@
-import React, { useState , Component } from 'react';
+import React, { Component } from 'react';
 import MaterialTable from 'material-table';
 import '../../stylesheets/components/Table.css';
 
@@ -38,7 +38,7 @@ export default class DeleteBook extends Component{
 
     async componentDidMount(){
         const allBooks = await getAllBooks(); //get the users from db using api
-        allBooks.data.books.map(book => {
+        allBooks.data.books.forEach(book => {
             book.authors = book.authors.join(', ');
         });
    

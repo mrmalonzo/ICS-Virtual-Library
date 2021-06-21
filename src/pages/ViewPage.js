@@ -1,7 +1,4 @@
-import { render } from '@testing-library/react';
 import React, {Component} from 'react';
-
-import { Results, Filter } from '@common';
 import '../stylesheets/pages/ViewPage.css'
 
 import { Spin } from 'antd';
@@ -10,7 +7,6 @@ import {readBook, readPublication} from '../api'
 
 import GoogleDocsViewer from 'react-google-docs-viewer'
 
-import {Document} from 'react-pdf'
 const antIcon = <LoadingOutlined style={{ fontSize: 36 }} spin />;
 
 
@@ -27,7 +23,7 @@ class ViewPage extends Component {
         const isNotNumber = isNaN(toView)      
         
         
-        if ( isNotNumber == false) {
+        if ( isNotNumber === false) {
             const results = await readBook(toView)
             
             this.setState({
@@ -79,7 +75,7 @@ class ViewPage extends Component {
 
             
 
-                {this.state.loading == true ? (
+                {this.state.loading === true ? (
                     <div className="View-spinner">
                         <Spin indicator={antIcon} size="default" />
                     </div>
@@ -89,7 +85,7 @@ class ViewPage extends Component {
 
                         <div className="View-with-document">
                             <div className="View-outer-container">
-                                <img src={this.state.data.cover} className="View-cover"></img>
+                                <img src={this.state.data.cover} className="View-cover" alt="Cover"></img>
                                 <div className ="View-inner-container">
                                     <h1> {this.state.data.title}</h1>
                                     <div className="View-authors">

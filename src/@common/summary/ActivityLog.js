@@ -69,7 +69,7 @@ class ActivityLog extends Component {
 
             <Fragment>
 
-                { this.state.loading == true ? (
+                { this.state.loading === true ? (
                     <div className="loader">
                     <h1 className="report-header">Activity Log</h1>
                     <Spin indicator={antIcon} size="default" />

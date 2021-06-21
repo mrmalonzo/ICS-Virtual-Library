@@ -15,9 +15,6 @@ const { Search } = Input;
 const antIcon = <LoadingOutlined style={{ fontSize: 36 }} spin />;
 
 
-const searchTerms = ["ai", "computer", "technology", "programming", "advancement", "philippines"]
-
-
 class Results extends Component {
 
   state = {
@@ -60,13 +57,13 @@ class Results extends Component {
     try {
 
       
-      if (this.state.type == "books") {
+      if (this.state.type === "books") {
         const results = await searchBooks(value)
         this.setState({
           data: results.data
         });
 
-      } else if (this.state.type == "publications") {
+      } else if (this.state.type === "publications") {
         const results = await searchPublications(value)
         this.setState({
           data: results.data
@@ -139,7 +136,7 @@ class Results extends Component {
       loading: true,
     })
 
-    if (e.target.value == "All") {
+    if (e.target.value ==="All") {
       this.setState({
         type:"all"
       })
@@ -147,23 +144,41 @@ class Results extends Component {
       this.setState({
         data: results.data,
       });
-    } else if (e.target.value == "Books") {
+    } else if (e.target.value === "Books") {
       this.setState({
         type:"books"
       })
-      const results = await searchBooks(value)
-      this.setState({
-        data: results.data,
-      });
+      try {
+        const results = await searchBooks(value)
+        this.setState({
+          data: results.data,
+        });
 
-    } else if (e.target.value == "Publications") {
+      } catch(e) {
+        this.setState({
+          data:[]
+        })
+      }
+      
+
+    } else if (e.target.value === "Publications") {
       this.setState({
         type:"publications"
       })
-      const results = await searchPublications(value);
-      this.setState({
-        data: results.data,
-      });
+
+      try {
+
+        const results = await searchPublications(value);
+        this.setState({
+          data: results.data,
+        });
+
+      } catch(e) {
+        this.setState({
+          data:[]
+        })
+      }
+      
 
     }
 
@@ -213,19 +228,19 @@ class Results extends Component {
                 <div>
                   <h4> What Will You Discover Today? </h4>
                   
-                  <img src={SearchIllustration} className="search-illustration"/>
+                  <img src={SearchIllustration} className="search-illustration" alt ="What To Search"/>
                 </div>
 
               )}
 
-              {(this.state.loading == true && this.state.toSearch != null) && (
+              {(this.state.loading === true && this.state.toSearch != null) && (
                 <div className="loader">
                 <Spin indicator={antIcon} size="default" />
                 </div>
               )}
 
 
-              {(this.state.loading == false && this.state.toSearch != null) && (
+              {(this.state.loading === false && this.state.toSearch != null) && (
                       
                 <div>
                   {(this.state.data.length > 0 ? (
@@ -238,7 +253,7 @@ class Results extends Component {
                   ):(
                     <div>
                       <h4> No Results For "{this.state.toSearch}" </h4>
-                      <img src={Searching} className="search-illustration"/>
+                      <img src={Searching} className="search-illustration" alt ="Searching"/>
                     </div>
 
                   ))}
