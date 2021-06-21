@@ -1,7 +1,5 @@
 .report-container{
     font-family: 'Gotham';
-    
-    
     margin-bottom: 20px;
 
 }
@@ -12,6 +10,8 @@
 
 .summary-entry{
     margin-bottom: 30px;
+    margin-right: 50px;
+    width: 700px;
 }
 
 .entry-title{

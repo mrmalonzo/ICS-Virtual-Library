@@ -164,6 +164,7 @@ class SummaryReport extends Component {
                             {this.state.data && this.state.data.publications.slice(this.state.indexOfFirstDataPubs, this.state.indexOfLastDataPubs).map( data => (
                                     <li className="summary-entry">
                                         <h2 className="entry-title">{data.title}</h2>
+                                        <h3 className="entry-type">{data.type.toUpperCase()}</h3>
                                         <div>
                                             {data.authors.map((authors_indiv) =>
                                                 <div>
