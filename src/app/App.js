@@ -97,7 +97,7 @@ export default class App extends Component {
 
                         this.state.user.user_type === "admin" ? (
                             <Switch>
-                                <Route exact path="/account/profile/">  <AdminPage { ... this.state.user }/> </Route>
+                                <Route exact path="/account/profile/"> <AdminPage { ... this.state.user }/> </Route>
                                 <Route exact path="/account/assign"> <AssignPage/> </Route>
                                 <Route exact path="/account/activity-log"> <ActivityPage/> </Route>
                                 <Route exact path="/account/books"> <BooksPage/> </Route>
