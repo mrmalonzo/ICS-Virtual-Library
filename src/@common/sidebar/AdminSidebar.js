@@ -10,28 +10,28 @@ const AdminSidebar = () =>{
 			<a className="button-item">Assign Roles</a> */}
 
 			<Link className="button-item" id="button-item-top" to="/account/profile">
-			<a className="button-item-a">Profile</a>
+				<h4 href="/account/profile" className="button-item-a">Profile</h4>
 			</Link>
 
 			<Link className="button-item" to="/account/assign">
-				<a className="button-item-a">Assign Roles</a>
+				<h4 className="button-item-a">Assign Roles</h4>
 
 			</Link>
             
 			<Link className="button-item" to="/account/books">
-            	<a className="button-item-a">Books</a>
+            	<h4 className="button-item-a">Books</h4>
 			</Link>
 
 			<Link className="button-item" to="/account/publications">
-            	<a className="button-item-a">Publications</a>
+            	<h4 className="button-item-a">Publications</h4>
 			</Link>
 
 			<Link className="button-item" to="/account/activity-log">
-				<a className="button-item-a">Activity Log</a>
+				<h4 className="button-item-a">Activity Log</h4>
 			</Link>
 			
 			<Link className="button-item" to="/account/summary-reports">
-				<a className="button-item-a" id="button-item-bottom">Summary Reports</a>
+				<h4 className="button-item-a" id="button-item-bottom">Summary Reports</h4>
 			</Link>
             
 		</div>

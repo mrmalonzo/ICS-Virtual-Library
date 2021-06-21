@@ -14,6 +14,16 @@
 
 }
 
+.button-item-a:hover {
+	color: #0340AD;
+
+}
+
+.button-item:hover {
+	color: #0340AD;
+	transition: 0.3s;
+}
+
 .button-item{
 	color: black;
 	text-decoration-line: none;
@@ -28,6 +38,7 @@
 .button-item-a{
 	color: black;
 	text-decoration-line: none;
+	transition: 0.3s;
 
 }
 

@@ -10,7 +10,7 @@ const Sidebar = () =>{
 			<a className="button-item">Assign Roles</a> */}
 
 			<Link to="/account/profile">
-			<a className="button-item" id="button-item-top">Profile</a>
+				<h4 className="button-item" id="button-item-top">Profile</h4>
 			</Link>
 
 		</div>

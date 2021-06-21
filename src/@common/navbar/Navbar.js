@@ -127,9 +127,9 @@ class Navbar extends Component {
                                 clientId= "798519625092-1nv3qjq5saevoafui6o510fhhk2f3n7k.apps.googleusercontent.com"
                 
                                 render = { renderProps => (
-                                    <a className="navbar-item" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                                    <h4 className="navbar-item" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                                         Log In With UP Mail
-                                    </a>
+                                    </h4>
                                 )}
                                 onSuccess={this.handleLogin}
                                 onFailure={this.handleError}
@@ -142,7 +142,7 @@ class Navbar extends Component {
     
                                 <Dropdown overlay={menu} >
                                     <Button>
-                                    {this.props.data.first_name} <img className="profile-pic" src={this.props.data.image}/> 
+                                    {this.props.data.first_name} <img className="profile-pic" src={this.props.data.image} alt="Profile"/> 
                                     </Button>
                                 </Dropdown>
     
