@@ -1,4 +1,5 @@
 import AboutBanner from './hero/hero_about_3.png'
+
 import David from './id/david.jpg'
 import Daniel from './id/daniel.jpg'
 import Bea from './id/bea.jpg';
@@ -6,6 +7,13 @@ import Kirby from './id/kirby.jpg';
 import Marlon from './id/marlon.jpg';
 import Red from './id/red.jpg';
 import Sam from './id/sam.jpg';
+import CJ from './id/cj.jpg';
+import EJ from './id/ej.jpg';
+import Elaine from './id/elaine.jpeg';
+import Ged from './id/ged.jpg';
+import Quin from './id/quin.png';
+import Robie from './id/robie.jpg';
+import Alina from './id/alina.jpg';
 
 import Facebook from './icons/facebook.png';
 import Firefox from './icons/firefox.png';
@@ -40,5 +48,12 @@ export {
     UPLB,
     SearchIllustration,
     Profile,
-    Searching
+    Searching,
+    CJ,
+    EJ,
+    Elaine,
+    Ged, 
+    Quin,
+    Robie,
+    Alina
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../../stylesheets/components/Footer.css";
 
 import {
@@ -37,9 +38,17 @@ const Footer = () =>{
 					©2021 ICS Virtual Library, All Rights Reserved.
 					</h3>
 					<div className="links">
-						<a href="www.google.com" target="_blank" rel="noopener noreferrer"><img src={Firefox} alt="Firefox" className="imagesLinks"/></a>
-						<a href="www.twitter.com" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt="Firefox" className="imagesLinks"/></a>
-						<a href="www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Firefox" className="imagesLinks"/></a>
+
+						<Link to={{ pathname: "http://ics.uplb.edu.ph/" }} target="_blank" >	
+							<img src={Firefox} alt="Firefox" className="imagesLinks"/>
+						</Link>
+
+						<Link to={{ pathname: "https://twitter.com/ics_uplb?lang=en" }} target="_blank" >	
+							<img src={Twitter} alt="Twitter" className="imagesLinks"/>
+						</Link>
+						<Link to={{ pathname: "https://www.facebook.com/ICS.UPLB/" }} target="_blank" >	
+							<img src={Facebook} alt="Facebook" className="imagesLinks"/>
+						</Link>
 					</div>
 
 				</div>

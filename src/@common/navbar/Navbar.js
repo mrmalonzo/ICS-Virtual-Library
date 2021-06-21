@@ -42,7 +42,7 @@ const menu = (
         </Menu.Item>  
             
         <Menu.Item key="2" icon={<LogoutOutlined />} onClick={handleLogout} >
-            <a>Logout</a>
+            <a href="/">Logout</a>
         </Menu.Item>                            
                                     
     </Menu>
