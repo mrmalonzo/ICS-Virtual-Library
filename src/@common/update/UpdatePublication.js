@@ -14,7 +14,7 @@ class UpdatePublication extends Component{
 			authors:[],
 			date:new Date(),
 			keywords:[],
-			publication_type:"",
+			publication_type:"sp",
 			abstract:"", 
 			poster:"",
 			manuscript:"",
